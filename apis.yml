@@ -1,0 +1,231 @@
+aid: greenly-earth
+name: Greenly
+description: >-
+  Greenly is a Paris-headquartered (with offices in London and New York)
+  carbon accounting platform focused on small and mid-sized businesses,
+  helping companies measure, reduce, and report their greenhouse-gas
+  emissions across Scope 1, 2, and 3. The platform automates carbon
+  footprint calculations from accounting, expense, supplier, energy, and
+  cloud data; produces regulator-aligned Bilan Carbone, GHG Protocol, CSRD,
+  CBAM, EUDR, SBTi, CDP, TCFD/IFRS, EcoVadis, and California climate
+  disclosure deliverables; supports product-level LCA; recommends supplier
+  alternatives; and offers a marketplace for verified carbon-offset projects.
+  Greenly also exposes a developer-facing Carbon Analytics REST API
+  (v1.5, hosted at api.greenly.earth) historically built by Offspend, which
+  banks and fintechs use to enrich bank-card transactions with per-purchase
+  CO2 emissions, classify spend into purchase categories, surface lower-carbon
+  alternatives, and book offset volumes against vetted projects — sandbox and
+  production environments are available with API-key authentication on
+  request to contact@greenly.earth.
+type: Index
+kind: contract
+position: Provider
+access: 3rd-Party
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Carbon Accounting
+  - Carbon Footprint
+  - Carbon Analytics
+  - Greenhouse Gas
+  - GHG Protocol
+  - Scope 1
+  - Scope 2
+  - Scope 3
+  - Sustainability
+  - ESG
+  - Climate
+  - CSRD
+  - CBAM
+  - EUDR
+  - SBTi
+  - TCFD
+  - EcoVadis
+  - Bilan Carbone
+  - Life Cycle Assessment
+  - Carbon Offsets
+  - SMB
+  - Fintech
+  - Transaction Enrichment
+url: https://raw.githubusercontent.com/api-evangelist/greenly-earth/refs/heads/main/apis.yml
+created: '2026-05-25'
+modified: '2026-05-25'
+specificationVersion: '0.20'
+apis:
+  - aid: greenly-earth:greenly-carbon-analytics-api
+    name: Greenly Carbon Analytics API
+    description: >-
+      The Greenly Carbon Analytics API (v1.5) is a RESTful service that
+      enriches bank-card and expense transactions with carbon-footprint
+      analytics. Given a transaction label (raw or cleaned), country, amount,
+      and currency, the API classifies the spend into a purchase category,
+      detects the merchant/provider, and returns estimated CO2-equivalent
+      emissions plus optional lower-carbon alternatives. Companion endpoints
+      expose the purchase-category taxonomy, the list of recommended
+      lower-carbon provider alternatives, the catalog of verified carbon
+      offset projects, an offset-booking endpoint, basic user management,
+      and standard live/ready health probes. Two environments are published:
+      a sandbox at https://apisandbox.greenly.earth/v1.5 and production at
+      https://api.greenly.earth/v1.5. Access requires an API key obtained by
+      emailing contact@greenly.earth; the key is passed in the api-key
+      request header. JSON in and out; sample Postman requests are available.
+    humanURL: https://api.greenly.earth/v1.5
+    baseURL: https://api.greenly.earth/v1.5
+    tags:
+      - Carbon Analytics
+      - Carbon Footprint
+      - Transaction Enrichment
+      - Carbon Offsets
+      - Purchase Categories
+      - Fintech
+    properties:
+      - type: OpenAPI
+        url: openapi/greenly-carbon-analytics-api-openapi.yml
+      - type: Sandbox
+        url: https://apisandbox.greenly.earth/v1.5
+      - type: Production
+        url: https://api.greenly.earth/v1.5
+      - type: Documentation
+        url: https://bump.sh/greenly
+      - type: Authentication
+        url: https://api.greenly.earth/v1.5
+      - type: Support
+        url: mailto:contact@greenly.earth
+common:
+  - type: Website
+    url: https://greenly.earth/
+  - type: Portal
+    url: https://greenly.earth/en-us
+  - type: Pricing
+    url: https://greenly.earth/info/pricing
+  - type: Plans
+    url: https://greenly.earth/info/pricing
+  - type: Documentation
+    url: https://help.greenly.earth/en/
+  - type: Support
+    url: https://help.greenly.earth/en/
+  - type: HelpCenter
+    url: https://help.greenly.earth/en/
+  - type: ContactUs
+    url: mailto:contact@greenly.earth
+  - type: Partners
+    url: https://greenly.earth/en-us/partners
+  - type: BecomeAPartner
+    url: https://greenly.earth/en-us/partners/become-a-partner
+  - type: Industries
+    url: https://greenly.earth/en-us/industries/finance
+  - type: Industries
+    url: https://greenly.earth/en-us/industries/tech
+  - type: Industries
+    url: https://greenly.earth/en-us/industries/retail
+  - type: Industries
+    url: https://greenly.earth/en-us/industries/industrial
+  - type: Product
+    url: https://greenly.earth/en-us/products/carbon-footprint
+  - type: Product
+    url: https://greenly.earth/en-us/products/lca
+  - type: Product
+    url: https://greenly.earth/en-us/products/action-plans
+  - type: Product
+    url: https://greenly.earth/en-us/products/csrd-reporting
+  - type: Product
+    url: https://greenly.earth/en-us/products/cbam
+  - type: Product
+    url: https://greenly.earth/en-us/products/eudr
+  - type: Product
+    url: https://greenly.earth/en-us/products/ecovadis
+  - type: Product
+    url: https://greenly.earth/en-us/products/esg-framework
+  - type: Product
+    url: https://greenly.earth/en-us/products/sustainable-procurement
+  - type: Product
+    url: https://greenly.earth/en-us/products/california-climate-disclosure-laws
+  - type: Product
+    url: https://greenly.earth/en-us/products/tcfd-ifrs-certifications
+  - type: Product
+    url: https://greenly.earth/en-us/products/retail-espr
+  - type: Methodology
+    url: https://greenly.earth/en-us/info/emission-factors
+  - type: Methodology
+    url: https://greenly.earth/en-us/info/artificial-intelligence
+  - type: Methodology
+    url: https://greenly.earth/en-us/info/scientific-board
+  - type: Methodology
+    url: https://greenly.earth/en-us/sbti
+  - type: Glossary
+    url: https://greenly.earth/en-us/glossary
+  - type: Blog
+    url: https://greenly.earth/en-us/blog
+  - type: CaseStudies
+    url: https://greenly.earth/en-us/case-study
+  - type: Resources
+    url: https://greenly.earth/en-us/resources/ebooks
+  - type: Resources
+    url: https://greenly.earth/en-us/resources/webinar
+  - type: Events
+    url: https://greenly.earth/en-us/resources/events
+  - type: Newsletter
+    url: https://greenly.earth/en-us/newsletter
+  - type: Tools
+    url: https://greenly.earth/en-us/tools
+  - type: PressKit
+    url: https://greenly.earth/en-us/info/press-kit
+  - type: ESGReport
+    url: https://greenly.earth/en-us/info/greenly-esg-report
+  - type: Comparison
+    url: https://greenly.earth/en-us/compare/greenly-vs-watershed
+  - type: Comparison
+    url: https://greenly.earth/en-us/compare/greenly-vs-persefoni
+  - type: Comparison
+    url: https://greenly.earth/en-us/compare/greenly-vs-normative
+  - type: Comparison
+    url: https://greenly.earth/en-us/compare/greenly-vs-sweep
+  - type: Comparison
+    url: https://greenly.earth/en-us/compare/greenly-vs-sami
+  - type: PrivacyPolicy
+    url: https://greenly.earth/en-us/cgv/privacy-policy-greenly-by-offspend
+  - type: DataSecurity
+    url: https://greenly.earth/en-us/cgv/data-security
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/greenly
+  - type: SignUp
+    url: https://greenly.earth/en-us/products/demo-steps
+  - type: Features
+    data:
+      - Automated corporate carbon footprint covering Scope 1, 2, and 3
+      - Bilan Carbone (ADEME) and GHG Protocol aligned reporting
+      - Bank and accounting integrations for transaction-level emissions enrichment
+      - Energy, cloud, freight, supplier, and expense data connectors
+      - Product-level Life Cycle Assessment (LCA)
+      - Supplier engagement and sustainable procurement workflows
+      - Action plans and decarbonization trajectory modeling against SBTi pathways
+      - CSRD/ESRS, TCFD, IFRS S1/S2, and CDP reporting modules
+      - CBAM (EU Carbon Border Adjustment Mechanism) reporting
+      - EUDR (EU Deforestation Regulation) compliance module
+      - California climate disclosure laws (SB 253 / SB 261) reporting
+      - EcoVadis questionnaire support and ESG framework module
+      - Verified carbon offset project marketplace with booking workflow
+      - Net-Zero Contributor certification program
+      - Lower-carbon supplier alternative recommendations
+      - Greenly Carbon Analytics REST API for fintech transaction enrichment
+      - Sandbox and production API environments with API-key authentication
+      - Multilingual platform with French, English, and other EU language support
+      - Industry-specific solutions for finance, tech, retail, and industrial sectors
+      - Scientific board and proprietary emission-factor database
+      - SMB-focused pricing and onboarding (Essentials / Premium tiers)
+    sources:
+      - https://greenly.earth/
+      - https://greenly.earth/en-us
+      - https://greenly.earth/info/pricing
+      - https://greenly.earth/en-us/partners
+      - https://greenly.earth/en-us/products/carbon-footprint
+      - https://greenly.earth/en-us/products/csrd-reporting
+      - https://greenly.earth/en-us/products/cbam
+      - https://greenly.earth/en-us/products/eudr
+      - https://greenly.earth/en-us/info/emission-factors
+      - https://api.greenly.earth/v1.5
+    updated: '2026-05-25'
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+    url: https://apievangelist.com
+    X: apievangelist
