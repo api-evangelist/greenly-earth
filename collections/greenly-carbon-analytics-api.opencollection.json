@@ -1,0 +1,284 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Greenly Carbon Analytics API",
+    "version": "1.5"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "alternatives",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all alternatives",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.greenly.earth/v1.5/alternatives"
+          },
+          "docs": "Retrieve the details of all low-carbon alternatives, either advices or low-carbon provider."
+        },
+        {
+          "info": {
+            "name": "Get alternative",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.greenly.earth/v1.5/alternatives/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve the details of one low-carbon alternative, either advice or low-carbon provider."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "offsetProjects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all offset projects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.greenly.earth/v1.5/offsetProjects"
+          },
+          "docs": "Retrieve the details of all offset projects"
+        },
+        {
+          "info": {
+            "name": "Get offset project",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.greenly.earth/v1.5/offsetProjects/:offsetProjectId",
+            "params": [
+              {
+                "name": "offsetProjectId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve the details of one offset project."
+        },
+        {
+          "info": {
+            "name": "Book offset project",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.greenly.earth/v1.5/offsetProjects/bookOffsetQuantity",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Booking a quantity of CO2 equivalent to offset from an offset project"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "live",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "IsLive",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.greenly.earth/v1.5/live"
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ready",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "IsReady",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.greenly.earth/v1.5/ready"
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "purchaseCategories",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all purchase categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.greenly.earth/v1.5/purchaseCategories",
+            "params": [
+              {
+                "name": "countryId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve the details of all purchase categories."
+        },
+        {
+          "info": {
+            "name": "Get purchase category",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.greenly.earth/v1.5/purchaseCategories/:purchaseCategoryId",
+            "params": [
+              {
+                "name": "purchaseCategoryId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "countryId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve the details of one purchase category."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "transactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Calculate carbon footprints",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.greenly.earth/v1.5/transactions/calculateCarbonFootprints",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculate the carbon footprints of the input transactions"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.greenly.earth/v1.5/users/createUser"
+          },
+          "docs": "Create a user."
+        },
+        {
+          "info": {
+            "name": "Get user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.greenly.earth/v1.5/users/:userId",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve user default tag values applied to all user transactions."
+        },
+        {
+          "info": {
+            "name": "Update user",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.greenly.earth/v1.5/users/:userId",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a user with new default tag values. All previous tag values are replaced (the two objects are not merged) so you\nmust provide all tag values that apply to the user during each call."
+        },
+        {
+          "info": {
+            "name": "Delete user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.greenly.earth/v1.5/users/:userId",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a user and all associated data. Warning: this operation is irreversible."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

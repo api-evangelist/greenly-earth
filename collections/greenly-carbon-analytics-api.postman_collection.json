@@ -1,0 +1,2660 @@
+{
+  "item": [
+    {
+      "id": "4caa6f0d-0912-4207-8db9-8ca567b0f255",
+      "name": "alternatives",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e4991f99-a2db-4944-a477-ac671a245855",
+          "name": "Get all alternatives",
+          "request": {
+            "name": "Get all alternatives",
+            "description": {
+              "content": "Retrieve the details of all low-carbon alternatives, either advices or low-carbon provider.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "alternatives"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fe508444-61f3-43fc-9479-d1692cc9f325",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alternatives"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"recommendedProviders\": [\n      {\n        \"logoUrl\": \"string\",\n        \"url\": \"string\",\n        \"name\": \"string\"\n      },\n      {\n        \"logoUrl\": \"string\",\n        \"url\": \"string\",\n        \"name\": \"string\"\n      }\n    ],\n    \"ratioEstimatedReduction\": 8155.947620288341,\n    \"sources\": [\n      \"string\",\n      \"string\"\n    ],\n    \"description\": {\n      \"en\": \"string\",\n      \"fr\": \"string\",\n      \"es\": \"string\",\n      \"it\": \"string\",\n      \"sv\": \"string\",\n      \"de\": \"string\"\n    },\n    \"geographicalRestriction\": \"ES\",\n    \"isProviderAlternative\": false,\n    \"id\": \"string\"\n  },\n  {\n    \"recommendedProviders\": [\n      {\n        \"logoUrl\": \"string\",\n        \"url\": \"string\",\n        \"name\": \"string\"\n      },\n      {\n        \"logoUrl\": \"string\",\n        \"url\": \"string\",\n        \"name\": \"string\"\n      }\n    ],\n    \"ratioEstimatedReduction\": 4935.441239704518,\n    \"sources\": [\n      \"string\",\n      \"string\"\n    ],\n    \"description\": {\n      \"en\": \"string\",\n      \"fr\": \"string\",\n      \"es\": \"string\",\n      \"it\": \"string\",\n      \"sv\": \"string\",\n      \"de\": \"string\"\n    },\n    \"geographicalRestriction\": \"ES\",\n    \"isProviderAlternative\": true,\n    \"id\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f551db69-e61e-41ae-86ba-35e295caa68a",
+              "name": "Authentication Failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alternatives"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "47064f8a-69e9-4ab8-946a-ebed6db1cefc",
+              "name": "An unexpected error occured while processing the request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alternatives"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "98908924-edc4-4603-97d2-d65bcd82031e",
+          "name": "Get alternative",
+          "request": {
+            "name": "Get alternative",
+            "description": {
+              "content": "Retrieve the details of one low-carbon alternative, either advice or low-carbon provider.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "alternatives",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fea36ffd-4d1f-473e-b7e2-0b364e32569a",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alternatives",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"recommendedProviders\": [\n    {\n      \"logoUrl\": \"string\",\n      \"url\": \"string\",\n      \"name\": \"string\"\n    },\n    {\n      \"logoUrl\": \"string\",\n      \"url\": \"string\",\n      \"name\": \"string\"\n    }\n  ],\n  \"ratioEstimatedReduction\": 8044.00536539913,\n  \"sources\": [\n    \"string\",\n    \"string\"\n  ],\n  \"description\": {\n    \"en\": \"string\",\n    \"fr\": \"string\",\n    \"es\": \"string\",\n    \"it\": \"string\",\n    \"sv\": \"string\",\n    \"de\": \"string\"\n  },\n  \"geographicalRestriction\": \"DE\",\n  \"isProviderAlternative\": true,\n  \"id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5e1a337d-f9fe-4e05-84a0-c8b43f68e7cf",
+              "name": "Authentication Failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alternatives",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2ff008a1-97f4-4179-8163-6f786b0087b8",
+              "name": "Resource not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alternatives",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e0523f4f-6bea-4b82-80e4-18b5e9a6cf2f",
+              "name": "An unexpected error occured while processing the request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "alternatives",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "9edcd9bd-a7e2-4cac-8868-88d16da8c2f4",
+      "name": "offsetProjects",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5d16cba2-c21f-41b3-8c83-f3f358971432",
+          "name": "Get all offset projects",
+          "request": {
+            "name": "Get all offset projects",
+            "description": {
+              "content": "Retrieve the details of all offset projects",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "offsetProjects"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d4950066-316c-47aa-a56c-d8b2f83614d2",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offsetProjects"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"remainingOffsetInTCO2eq\": 9477.00473386414,\n    \"totalOffsetInTCO2eq\": 2564.201317195124,\n    \"priceInEuroPerTCO2eq\": 6382.373298860041,\n    \"certificationsLogoURL\": [\n      \"string\",\n      \"string\"\n    ],\n    \"certifications\": [\n      \"string\",\n      \"string\"\n    ],\n    \"partnerLogoURL\": \"string\",\n    \"partner\": \"string\",\n    \"longDescription\": {\n      \"en\": \"string\",\n      \"fr\": \"string\",\n      \"es\": \"string\",\n      \"it\": \"string\",\n      \"sv\": \"string\",\n      \"de\": \"string\"\n    },\n    \"shortHandDescription\": {\n      \"en\": \"string\",\n      \"fr\": \"string\",\n      \"es\": \"string\",\n      \"it\": \"string\",\n      \"sv\": \"string\",\n      \"de\": \"string\"\n    },\n    \"location\": \"string\",\n    \"name\": \"string\",\n    \"id\": \"string\"\n  },\n  {\n    \"remainingOffsetInTCO2eq\": 906.5651310719736,\n    \"totalOffsetInTCO2eq\": 5747.245043316886,\n    \"priceInEuroPerTCO2eq\": 6703.843821188582,\n    \"certificationsLogoURL\": [\n      \"string\",\n      \"string\"\n    ],\n    \"certifications\": [\n      \"string\",\n      \"string\"\n    ],\n    \"partnerLogoURL\": \"string\",\n    \"partner\": \"string\",\n    \"longDescription\": {\n      \"en\": \"string\",\n      \"fr\": \"string\",\n      \"es\": \"string\",\n      \"it\": \"string\",\n      \"sv\": \"string\",\n      \"de\": \"string\"\n    },\n    \"shortHandDescription\": {\n      \"en\": \"string\",\n      \"fr\": \"string\",\n      \"es\": \"string\",\n      \"it\": \"string\",\n      \"sv\": \"string\",\n      \"de\": \"string\"\n    },\n    \"location\": \"string\",\n    \"name\": \"string\",\n    \"id\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "df2d7ae3-d86c-4c26-9e9a-571fbcab635f",
+              "name": "Authentication Failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offsetProjects"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "79eab39c-624f-44f3-998e-ef99f5da4f1a",
+              "name": "An unexpected error occured while processing the request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offsetProjects"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f5974549-08fe-4db3-ab6f-3fe01c2b7239",
+          "name": "Get offset project",
+          "request": {
+            "name": "Get offset project",
+            "description": {
+              "content": "Retrieve the details of one offset project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "offsetProjects",
+                ":offsetProjectId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "offsetProjectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d74e0ad2-2014-4c2a-bde4-76c7d6559287",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offsetProjects",
+                    ":offsetProjectId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "offsetProjectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"remainingOffsetInTCO2eq\": 5014.380221079956,\n  \"totalOffsetInTCO2eq\": 7076.2507970867055,\n  \"priceInEuroPerTCO2eq\": 2103.5173381827544,\n  \"certificationsLogoURL\": [\n    \"string\",\n    \"string\"\n  ],\n  \"certifications\": [\n    \"string\",\n    \"string\"\n  ],\n  \"partnerLogoURL\": \"string\",\n  \"partner\": \"string\",\n  \"longDescription\": {\n    \"en\": \"string\",\n    \"fr\": \"string\",\n    \"es\": \"string\",\n    \"it\": \"string\",\n    \"sv\": \"string\",\n    \"de\": \"string\"\n  },\n  \"shortHandDescription\": {\n    \"en\": \"string\",\n    \"fr\": \"string\",\n    \"es\": \"string\",\n    \"it\": \"string\",\n    \"sv\": \"string\",\n    \"de\": \"string\"\n  },\n  \"location\": \"string\",\n  \"name\": \"string\",\n  \"id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "261bdb6e-b238-4f42-895d-329f8a7833c2",
+              "name": "Authentication Failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offsetProjects",
+                    ":offsetProjectId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "offsetProjectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "05b4b129-3aa7-4747-a418-c6675cb1f35d",
+              "name": "Resource not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offsetProjects",
+                    ":offsetProjectId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "offsetProjectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7d41ddd5-8e40-4fbb-aa86-5cd513b48662",
+              "name": "An unexpected error occured while processing the request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offsetProjects",
+                    ":offsetProjectId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "offsetProjectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dd6284d7-dfd8-4117-95be-25176c5d9494",
+          "name": "Book offset project",
+          "request": {
+            "name": "Book offset project",
+            "description": {
+              "content": "Booking a quantity of CO2 equivalent to offset from an offset project",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "offsetProjects",
+                "bookOffsetQuantity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"bookedOffsetInTCO2eq\": \"<double>\",\n  \"offsetProjectId\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "db6b7611-5778-422f-b44f-9c638aed520a",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offsetProjects",
+                    "bookOffsetQuantity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"bookedOffsetInTCO2eq\": \"<double>\",\n  \"offsetProjectId\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalPrice\": 7333.452689900386,\n  \"bookingSuccessful\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f9f8f2a4-322e-4c6e-b316-4eda5da1a5b5",
+              "name": "Authentication Failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offsetProjects",
+                    "bookOffsetQuantity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"bookedOffsetInTCO2eq\": \"<double>\",\n  \"offsetProjectId\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "86b779fc-48a2-4343-9529-bdea549a6944",
+              "name": "Input request body does not have the right format",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offsetProjects",
+                    "bookOffsetQuantity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"bookedOffsetInTCO2eq\": \"<double>\",\n  \"offsetProjectId\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "76c63c41-fdce-45c6-a621-a56241da387e",
+              "name": "An unexpected error occured while processing the request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offsetProjects",
+                    "bookOffsetQuantity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"bookedOffsetInTCO2eq\": \"<double>\",\n  \"offsetProjectId\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "8c1d13b3-7c71-43f0-bfaf-4462b15b8e95",
+      "name": "live",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "08b93702-0ca0-4de6-bd45-a9d759c8cf7d",
+          "name": "Is Live",
+          "request": {
+            "name": "Is Live",
+            "description": {},
+            "url": {
+              "path": [
+                "live"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "582f1526-7761-471d-9b82-aea857ce996d",
+              "name": "No content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "live"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "88e78abd-89c5-436a-9d84-f4c1c4e42f9b",
+              "name": "Authentication Failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "live"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "92c252a9-637d-4eb3-ac56-86bc1a70722b",
+              "name": "Down",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "live"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "2ee7bf56-ef65-428e-8b32-f417fbafad51",
+      "name": "ready",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ea871b7f-16ce-459c-9361-e24bca38353f",
+          "name": "Is Ready",
+          "request": {
+            "name": "Is Ready",
+            "description": {},
+            "url": {
+              "path": [
+                "ready"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "17ce399e-6ef6-4cb6-9b6f-6d78831d5226",
+              "name": "No content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ready"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "64724039-a2e2-482d-8fba-63c24dafddff",
+              "name": "Authentication Failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ready"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d1e614b4-6978-44a0-a273-30c1f0b0a7fb",
+              "name": "Not ready",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ready"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "4de91145-8284-41fd-b45b-707f2c07b51d",
+      "name": "purchaseCategories",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e083228d-0e4e-4c22-a492-aa0926610d2a",
+          "name": "Get all purchase categories",
+          "request": {
+            "name": "Get all purchase categories",
+            "description": {
+              "content": "Retrieve the details of all purchase categories.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "purchaseCategories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "countryId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6e6ea8b2-6883-4cd8-9afb-136152e5cf25",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "purchaseCategories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "countryId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"possibleTags\": [\n      {\n        \"translations\": {\n          \"en\": \"string\",\n          \"fr\": \"string\",\n          \"es\": \"string\",\n          \"it\": \"string\",\n          \"sv\": \"string\",\n          \"de\": \"string\"\n        },\n        \"type\": \"number\",\n        \"id\": \"string\",\n        \"enumValues\": [\n          {\n            \"translations\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": \"string\"\n          },\n          {\n            \"translations\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": \"string\"\n          }\n        ]\n      },\n      {\n        \"translations\": {\n          \"en\": \"string\",\n          \"fr\": \"string\",\n          \"es\": \"string\",\n          \"it\": \"string\",\n          \"sv\": \"string\",\n          \"de\": \"string\"\n        },\n        \"type\": \"number\",\n        \"id\": \"string\",\n        \"enumValues\": [\n          {\n            \"translations\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": \"string\"\n          },\n          {\n            \"translations\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": \"string\"\n          }\n        ]\n      }\n    ],\n    \"translations\": {\n      \"en\": \"string\",\n      \"fr\": \"string\",\n      \"es\": \"string\",\n      \"it\": \"string\",\n      \"sv\": \"string\",\n      \"de\": \"string\"\n    },\n    \"parentPurchaseCategory\": \"Uncategorized\",\n    \"methodology\": {\n      \"en\": \"string\",\n      \"fr\": \"string\",\n      \"es\": \"string\",\n      \"it\": \"string\",\n      \"sv\": \"string\",\n      \"de\": \"string\"\n    },\n    \"id\": \"string\"\n  },\n  {\n    \"possibleTags\": [\n      {\n        \"translations\": {\n          \"en\": \"string\",\n          \"fr\": \"string\",\n          \"es\": \"string\",\n          \"it\": \"string\",\n          \"sv\": \"string\",\n          \"de\": \"string\"\n        },\n        \"type\": \"boolean\",\n        \"id\": \"string\",\n        \"enumValues\": [\n          {\n            \"translations\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": \"string\"\n          },\n          {\n            \"translations\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": \"string\"\n          }\n        ]\n      },\n      {\n        \"translations\": {\n          \"en\": \"string\",\n          \"fr\": \"string\",\n          \"es\": \"string\",\n          \"it\": \"string\",\n          \"sv\": \"string\",\n          \"de\": \"string\"\n        },\n        \"type\": \"enum\",\n        \"id\": \"string\",\n        \"enumValues\": [\n          {\n            \"translations\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": \"string\"\n          },\n          {\n            \"translations\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": \"string\"\n          }\n        ]\n      }\n    ],\n    \"translations\": {\n      \"en\": \"string\",\n      \"fr\": \"string\",\n      \"es\": \"string\",\n      \"it\": \"string\",\n      \"sv\": \"string\",\n      \"de\": \"string\"\n    },\n    \"parentPurchaseCategory\": \"Food\",\n    \"methodology\": {\n      \"en\": \"string\",\n      \"fr\": \"string\",\n      \"es\": \"string\",\n      \"it\": \"string\",\n      \"sv\": \"string\",\n      \"de\": \"string\"\n    },\n    \"id\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1a38042d-b4b7-404f-ba94-70d8a84c7904",
+              "name": "Authentication Failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "purchaseCategories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "countryId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e4cfd616-0ef7-4d60-bc6d-247ef91d1f91",
+              "name": "An unexpected error occurred while processing the request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "purchaseCategories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "countryId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a77a3ac3-0d42-4c3f-84ba-bd4af5d6b7a7",
+          "name": "Get purchase category",
+          "request": {
+            "name": "Get purchase category",
+            "description": {
+              "content": "Retrieve the details of one purchase category.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "purchaseCategories",
+                ":purchaseCategoryId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "countryId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "purchaseCategoryId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b8688d74-e77f-48d7-9231-69da1868f1a4",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "purchaseCategories",
+                    ":purchaseCategoryId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "countryId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "purchaseCategoryId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"possibleTags\": [\n    {\n      \"translations\": {\n        \"en\": \"string\",\n        \"fr\": \"string\",\n        \"es\": \"string\",\n        \"it\": \"string\",\n        \"sv\": \"string\",\n        \"de\": \"string\"\n      },\n      \"type\": \"boolean\",\n      \"id\": \"string\",\n      \"enumValues\": [\n        {\n          \"translations\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"id\": \"string\"\n        },\n        {\n          \"translations\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"id\": \"string\"\n        }\n      ]\n    },\n    {\n      \"translations\": {\n        \"en\": \"string\",\n        \"fr\": \"string\",\n        \"es\": \"string\",\n        \"it\": \"string\",\n        \"sv\": \"string\",\n        \"de\": \"string\"\n      },\n      \"type\": \"boolean\",\n      \"id\": \"string\",\n      \"enumValues\": [\n        {\n          \"translations\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"id\": \"string\"\n        },\n        {\n          \"translations\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"id\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"translations\": {\n    \"en\": \"string\",\n    \"fr\": \"string\",\n    \"es\": \"string\",\n    \"it\": \"string\",\n    \"sv\": \"string\",\n    \"de\": \"string\"\n  },\n  \"parentPurchaseCategory\": \"Transport\",\n  \"methodology\": {\n    \"en\": \"string\",\n    \"fr\": \"string\",\n    \"es\": \"string\",\n    \"it\": \"string\",\n    \"sv\": \"string\",\n    \"de\": \"string\"\n  },\n  \"id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7abe2ee3-4595-4047-9efc-a943338295ec",
+              "name": "Authentication Failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "purchaseCategories",
+                    ":purchaseCategoryId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "countryId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "purchaseCategoryId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ac418384-3769-492b-a7cf-aff9929b4fca",
+              "name": "Resource not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "purchaseCategories",
+                    ":purchaseCategoryId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "countryId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "purchaseCategoryId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2774a37d-0d8c-4d1b-8eeb-2134d29e2bef",
+              "name": "An unexpected error occurred while processing the request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "purchaseCategories",
+                    ":purchaseCategoryId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "countryId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "purchaseCategoryId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "165ddc43-c25e-42e5-abfd-b596d6ba460d",
+      "name": "transactions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8e40601d-411c-4a03-b76e-c00db5807dbd",
+          "name": "Calculate carbon footprints",
+          "request": {
+            "name": "Calculate carbon footprints",
+            "description": {
+              "content": "Calculate the carbon footprints of the input transactions",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "transactions",
+                "calculateCarbonFootprints"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"transactions\": [\n    {\n      \"type\": \"<string>\",\n      \"label\": \"<string>\",\n      \"id\": \"<string>\",\n      \"countryCode\": \"<string>\",\n      \"tagValues\": [\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        }\n      ],\n      \"purchaseCategoryId\": \"<string>\",\n      \"mccCode\": \"<string>\",\n      \"amount\": \"<double>\",\n      \"amountInEur\": \"<double>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"label\": \"<string>\",\n      \"id\": \"<string>\",\n      \"countryCode\": \"<string>\",\n      \"tagValues\": [\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        }\n      ],\n      \"purchaseCategoryId\": \"<string>\",\n      \"mccCode\": \"<string>\",\n      \"amount\": \"<double>\",\n      \"amountInEur\": \"<double>\"\n    }\n  ],\n  \"languages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"userId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "66012d59-a3d5-40fe-a034-31155377432d",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions",
+                    "calculateCarbonFootprints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"transactions\": [\n    {\n      \"type\": \"<string>\",\n      \"label\": \"<string>\",\n      \"id\": \"<string>\",\n      \"countryCode\": \"<string>\",\n      \"tagValues\": [\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        }\n      ],\n      \"purchaseCategoryId\": \"<string>\",\n      \"mccCode\": \"<string>\",\n      \"amount\": \"<double>\",\n      \"amountInEur\": \"<double>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"label\": \"<string>\",\n      \"id\": \"<string>\",\n      \"countryCode\": \"<string>\",\n      \"tagValues\": [\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        }\n      ],\n      \"purchaseCategoryId\": \"<string>\",\n      \"mccCode\": \"<string>\",\n      \"amount\": \"<double>\",\n      \"amountInEur\": \"<double>\"\n    }\n  ],\n  \"languages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"userId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"carbonFootprint\": {\n      \"emissionsInKg\": 4215.945800228957,\n      \"avoidedEmissionsInKg\": 686.9472094950269\n    },\n    \"carbonFootprintEquivalents\": {\n      \"avoidedEmissionsInKgEquivalent\": {\n        \"nullable\": true,\n        \"description\": \"intuitive equivalent for the avoided CO2e emissions\",\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"emissionsInKgEquivalent\": {\n        \"nullable\": true,\n        \"description\": \"intuitive equivalent for the emitted CO2e emissions\",\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"cleanedLabel\": \"string\",\n    \"isGreen\": true,\n    \"purchaseCategoryId\": \"string\",\n    \"tagValues\": [\n      {\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tagId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tagId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"transactionId\": \"string\",\n    \"alternatives\": [\n      {\n        \"recommendedProviders\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"ratioEstimatedReduction\": 5701.603925420793,\n        \"sources\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"description\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"geographicalRestriction\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"isProviderAlternative\": true,\n        \"id\": \"string\"\n      },\n      {\n        \"recommendedProviders\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"ratioEstimatedReduction\": 2087.4434077570036,\n        \"sources\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"description\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"geographicalRestriction\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"isProviderAlternative\": true,\n        \"id\": \"string\"\n      }\n    ],\n    \"alternativeIds\": [\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    ],\n    \"methodology\": {\n      \"de\": \"string\",\n      \"sv\": \"string\",\n      \"es\": \"string\",\n      \"it\": \"string\",\n      \"en\": \"string\",\n      \"fr\": \"string\"\n    }\n  },\n  {\n    \"carbonFootprint\": {\n      \"emissionsInKg\": 6366.863797747759,\n      \"avoidedEmissionsInKg\": 5122.363233373412\n    },\n    \"carbonFootprintEquivalents\": {\n      \"avoidedEmissionsInKgEquivalent\": {\n        \"nullable\": true,\n        \"description\": \"intuitive equivalent for the avoided CO2e emissions\",\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"emissionsInKgEquivalent\": {\n        \"nullable\": true,\n        \"description\": \"intuitive equivalent for the emitted CO2e emissions\",\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"cleanedLabel\": \"string\",\n    \"isGreen\": true,\n    \"purchaseCategoryId\": \"string\",\n    \"tagValues\": [\n      {\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tagId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tagId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"transactionId\": \"string\",\n    \"alternatives\": [\n      {\n        \"recommendedProviders\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"ratioEstimatedReduction\": 4882.550089059984,\n        \"sources\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"description\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"geographicalRestriction\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"isProviderAlternative\": true,\n        \"id\": \"string\"\n      },\n      {\n        \"recommendedProviders\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"ratioEstimatedReduction\": 9163.910494497017,\n        \"sources\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"description\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"geographicalRestriction\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"isProviderAlternative\": false,\n        \"id\": \"string\"\n      }\n    ],\n    \"alternativeIds\": [\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    ],\n    \"methodology\": {\n      \"de\": \"string\",\n      \"sv\": \"string\",\n      \"es\": \"string\",\n      \"it\": \"string\",\n      \"en\": \"string\",\n      \"fr\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ac650e93-cff3-4651-9c98-e075e04905a1",
+              "name": "Authentication Failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions",
+                    "calculateCarbonFootprints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"transactions\": [\n    {\n      \"type\": \"<string>\",\n      \"label\": \"<string>\",\n      \"id\": \"<string>\",\n      \"countryCode\": \"<string>\",\n      \"tagValues\": [\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        }\n      ],\n      \"purchaseCategoryId\": \"<string>\",\n      \"mccCode\": \"<string>\",\n      \"amount\": \"<double>\",\n      \"amountInEur\": \"<double>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"label\": \"<string>\",\n      \"id\": \"<string>\",\n      \"countryCode\": \"<string>\",\n      \"tagValues\": [\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        }\n      ],\n      \"purchaseCategoryId\": \"<string>\",\n      \"mccCode\": \"<string>\",\n      \"amount\": \"<double>\",\n      \"amountInEur\": \"<double>\"\n    }\n  ],\n  \"languages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"userId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2a11dad8-3d3c-421b-8454-3789c0978634",
+              "name": "User not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions",
+                    "calculateCarbonFootprints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"transactions\": [\n    {\n      \"type\": \"<string>\",\n      \"label\": \"<string>\",\n      \"id\": \"<string>\",\n      \"countryCode\": \"<string>\",\n      \"tagValues\": [\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        }\n      ],\n      \"purchaseCategoryId\": \"<string>\",\n      \"mccCode\": \"<string>\",\n      \"amount\": \"<double>\",\n      \"amountInEur\": \"<double>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"label\": \"<string>\",\n      \"id\": \"<string>\",\n      \"countryCode\": \"<string>\",\n      \"tagValues\": [\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        }\n      ],\n      \"purchaseCategoryId\": \"<string>\",\n      \"mccCode\": \"<string>\",\n      \"amount\": \"<double>\",\n      \"amountInEur\": \"<double>\"\n    }\n  ],\n  \"languages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"userId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d0f304cb-5873-48d4-b763-66d2f1075333",
+              "name": "Input request body does not have the right format",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions",
+                    "calculateCarbonFootprints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"transactions\": [\n    {\n      \"type\": \"<string>\",\n      \"label\": \"<string>\",\n      \"id\": \"<string>\",\n      \"countryCode\": \"<string>\",\n      \"tagValues\": [\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        }\n      ],\n      \"purchaseCategoryId\": \"<string>\",\n      \"mccCode\": \"<string>\",\n      \"amount\": \"<double>\",\n      \"amountInEur\": \"<double>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"label\": \"<string>\",\n      \"id\": \"<string>\",\n      \"countryCode\": \"<string>\",\n      \"tagValues\": [\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        }\n      ],\n      \"purchaseCategoryId\": \"<string>\",\n      \"mccCode\": \"<string>\",\n      \"amount\": \"<double>\",\n      \"amountInEur\": \"<double>\"\n    }\n  ],\n  \"languages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"userId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1878f9bd-f93a-41fc-bf55-ee91af3298f4",
+              "name": "An unexpected error occured while processing the request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions",
+                    "calculateCarbonFootprints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"transactions\": [\n    {\n      \"type\": \"<string>\",\n      \"label\": \"<string>\",\n      \"id\": \"<string>\",\n      \"countryCode\": \"<string>\",\n      \"tagValues\": [\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        }\n      ],\n      \"purchaseCategoryId\": \"<string>\",\n      \"mccCode\": \"<string>\",\n      \"amount\": \"<double>\",\n      \"amountInEur\": \"<double>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"label\": \"<string>\",\n      \"id\": \"<string>\",\n      \"countryCode\": \"<string>\",\n      \"tagValues\": [\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"tagId\": \"<string>\"\n        }\n      ],\n      \"purchaseCategoryId\": \"<string>\",\n      \"mccCode\": \"<string>\",\n      \"amount\": \"<double>\",\n      \"amountInEur\": \"<double>\"\n    }\n  ],\n  \"languages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"userId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "4c770ccd-46b2-4a2f-aabb-a3c15c5a72e0",
+      "name": "users",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ea334190-cf5e-4901-9902-7a5ba3796e7f",
+          "name": "Create user",
+          "request": {
+            "name": "Create user",
+            "description": {
+              "content": "Create a user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                "createUser"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8efda83e-488f-472b-8425-ad64885856bc",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "createUser"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"defaultTagValues\": [\n    {\n      \"value\": \"string\",\n      \"tagId\": \"string\"\n    },\n    {\n      \"value\": \"string\",\n      \"tagId\": \"string\"\n    }\n  ],\n  \"userId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5668a791-0eb2-4470-b84f-89b932b4b71a",
+              "name": "Authentication Failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "createUser"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d240a7f6-6ebe-424b-a4aa-f5aad7ae5927",
+              "name": "Input request body does not have the right format",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "createUser"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "76edbe14-7e8a-4c06-a74b-7e1c9a1195e5",
+              "name": "An unexpected error occured while processing the request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "createUser"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "84d50963-e3df-43a7-978a-85ef447de48c",
+          "name": "Update user",
+          "request": {
+            "name": "Update user",
+            "description": {
+              "content": "Update a user with new default tag values. All previous tag values are replaced (the two objects are not merged) so you\nmust provide all tag values that apply to the user during each call.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":userId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"defaultTagValues\": [\n    {\n      \"value\": \"<string>\",\n      \"tagId\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"tagId\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "db5b2d5a-9879-4ff1-b1e1-b32cc7ebbff4",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"defaultTagValues\": [\n    {\n      \"value\": \"<string>\",\n      \"tagId\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"tagId\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"defaultTagValues\": [\n    {\n      \"value\": \"<string>\",\n      \"tagId\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"tagId\": \"<string>\"\n    }\n  ],\n  \"userId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "39e974e6-0b03-4e5c-b514-641ce756400c",
+              "name": "Authentication Failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"defaultTagValues\": [\n    {\n      \"value\": \"<string>\",\n      \"tagId\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"tagId\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0f71806f-c8a2-43eb-bb34-bf56b238021b",
+              "name": "Resource not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"defaultTagValues\": [\n    {\n      \"value\": \"<string>\",\n      \"tagId\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"tagId\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "209903ed-a6a6-4006-bcbf-a02e07d4a567",
+              "name": "Input request body does not have the right format",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"defaultTagValues\": [\n    {\n      \"value\": \"<string>\",\n      \"tagId\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"tagId\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "94859485-9af7-4d58-9e0b-8e1e5f4a9445",
+              "name": "An unexpected error occured while processing the request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"defaultTagValues\": [\n    {\n      \"value\": \"<string>\",\n      \"tagId\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"tagId\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "75f0811c-adf2-4074-8568-44a7a269e8fc",
+          "name": "Get user",
+          "request": {
+            "name": "Get user",
+            "description": {
+              "content": "Retrieve user default tag values applied to all user transactions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":userId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f676c247-01bc-4acd-ae8d-8e492316eed5",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"defaultTagValues\": [\n    {\n      \"value\": \"<string>\",\n      \"tagId\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"tagId\": \"<string>\"\n    }\n  ],\n  \"userId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4d0705bd-2d32-48c8-b16b-6e3a0f64d07e",
+              "name": "Authentication Failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fa04c046-5798-4ec2-afdb-7f9ae1dfa704",
+              "name": "Resource not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3fb29826-5b80-4a10-b4a8-52e0050f2b01",
+              "name": "An unexpected error occured while processing the request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bae73a0b-5f34-4025-b14e-a8b16876af35",
+          "name": "Delete user",
+          "request": {
+            "name": "Delete user",
+            "description": {
+              "content": "Delete a user and all associated data. Warning: this operation is irreversible.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":userId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "47ba289f-000f-4782-a453-c0802da0a21c",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9d1e1410-c529-4b3f-ae84-cd7c242763b5",
+              "name": "Authentication Failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c082a618-9126-41ea-a070-b4342e892779",
+              "name": "Resource not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "67e3bec5-4a6c-4abf-9e8e-3273b4e6b016",
+              "name": "An unexpected error occured while processing the request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.greenly.earth/v1.5",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7df6faed-e464-4205-b364-7c976027fd47",
+    "name": "Greenly Carbon Analytics API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Introduction\nThe Greenly Carbon Analytics API is a set of RESTful services which enable the enrichment of bank transactions with carbon footprint analytics.\n\n All request and response payloads, including errors, use the JSON naming convention.\n\n2 API environments are available: a sandbox environment used to test the API capacities and your integration with these services and the production environment.\n\nTo have access to these environments, you will need to obtain API keys by contacting us at contact@greenly.earth.\n\nThe 2 environments are available at the following URL:\n - Sandbox environment: <https://apisandbox.greenly.earth/v1.5>\n - Production environment: <https://api.greenly.earth/v1.5>\n# Getting Started\nYou can download our sample Postman requests at the following URL: <http://offspend.github.io/PostmanRequests.zip>\n\nYou then need to add your API key in the Greenly Sandbox API environment. After that, you should be able to create a user. Executing this Postman request will automatically set the latest created userId as a global env in your Postman environment. So after creating this user, you can directly try all the other requests including the Calculate Carbon Footprints one which will show you the carbon footprint analysis for a lot of different transactions.\n# Input Transaction Labels\nThe algorithm classifies transactions to providers and purchase categories so as to measure their carbon footprint based on their labels. In the best case, this label would consist only of the name of the recipient of the payment. Yet, in general, raw label contain overhead information, related in particular to the type of payment and the date of the transaction.\n\nIn the case where a cleaning of the overhead is done on the bank side, only the cleaned label should be transmitted to the API. If no cleaning is done or the cleaning is deemed to be too noisy or unreliable, raw labels can be also transmitted to the API. \n\nIndeed, when a label is received, the classification algorithm looks for all common overhead patterns, such as  “CB XXXXX”, “paiement par carte”, or “01/06/2020”, among many other overhead patterns.The classification algorithm removes all such patterns used by all banks that it was possible to enumerate during the R&D process. Yet, it is always possible that some patterns could not be found, or that the format evolves at some time. In that case, the cleaning of the pattern should either be done at the user side, or the user should contact the Greenly support team to ensure proper cleaning of the raw label and hence proper classification and estimation of the carbon footprint.\n\nAs a toy example, let us consider the following raw label to illustrate the allowed format: “paiement par carte super u 35 st jacques de 05/07”. Providing the “cleaned label” would be “super u 35 st jacques de“ or variations thereof, and as it can be observed the cleaned label does not need to be perfectly informative nor cleaned. As mentioned above, it is also possible to simply provide the raw label and the API will take care of removing the date and the overhead linked to card payment. Yet, it is not desired to provide both cleaned and raw labels using a separator (e.g. a new line ‘\n’ separator or other variations) as this would lead to degraded performances.\n\n# Authentication\n\n<!-- ReDoc-Inject: <security-definitions> -->\n\nContact Support:\n Email: contact@greenly.earth",
+      "type": "text/plain"
+    }
+  }
+}
