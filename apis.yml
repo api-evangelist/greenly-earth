@@ -187,7 +187,7 @@ common:
     url: https://greenly.earth/en-us/cgv/data-security
   - type: LinkedIn
     url: https://www.linkedin.com/company/greenly
-  - type: SignUp
+  - type: Signup
     url: https://greenly.earth/en-us/products/demo-steps
   - type: Features
     data:
