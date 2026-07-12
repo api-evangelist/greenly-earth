@@ -91,6 +91,10 @@ apis:
       - type: Support
         url: mailto:contact@greenly.earth
 common:
+  - type: DomainSecurity
+    url: security/greenly-earth-domain-security.yml
+  - type: Authentication
+    url: authentication/greenly-earth-authentication.yml
   - type: Website
     url: https://greenly.earth/
   - type: Portal
