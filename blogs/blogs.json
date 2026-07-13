@@ -2,13 +2,14 @@
   "repo": "greenly-earth",
   "feeds": [
     {
-      "source": "https://greenly.earth/en-us/blog",
-      "feed_url": "",
+      "source": "https://greenly.earth/en-us/glossary",
+      "feed_url": "https://greenly.earth/en-us/glossary",
+      "title": "",
       "saved": 0,
-      "method": "agent-scrape"
+      "method": "none"
     }
   ],
-  "fetched": "2026-06-27T12:44:34Z",
+  "fetched": "2026-07-11T11:50:51Z",
   "post_count": 0,
-  "agent_pulled": "2026-06-27"
+  "agent_pulled": "2026-07-04"
 }
