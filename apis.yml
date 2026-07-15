@@ -91,6 +91,8 @@ apis:
       - type: Support
         url: mailto:contact@greenly.earth
 common:
+  - type: AgenticAccess
+    url: agentic-access/greenly-earth-agentic-access.yml
   - type: DomainSecurity
     url: security/greenly-earth-domain-security.yml
   - type: Authentication
