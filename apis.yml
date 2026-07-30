@@ -19,9 +19,21 @@ description: >-
   request to contact@greenly.earth.
 type: Index
 kind: contract
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Provider
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/greenly-earth.png
 tags:
   - Carbon Accounting
   - Carbon Footprint
@@ -51,45 +63,146 @@ created: '2026-05-25'
 modified: '2026-05-25'
 specificationVersion: '0.20'
 apis:
-  - aid: greenly-earth:greenly-carbon-analytics-api
-    name: Greenly Carbon Analytics API
-    description: >-
-      The Greenly Carbon Analytics API (v1.5) is a RESTful service that
-      enriches bank-card and expense transactions with carbon-footprint
-      analytics. Given a transaction label (raw or cleaned), country, amount,
-      and currency, the API classifies the spend into a purchase category,
-      detects the merchant/provider, and returns estimated CO2-equivalent
-      emissions plus optional lower-carbon alternatives. Companion endpoints
-      expose the purchase-category taxonomy, the list of recommended
-      lower-carbon provider alternatives, the catalog of verified carbon
-      offset projects, an offset-booking endpoint, basic user management,
-      and standard live/ready health probes. Two environments are published:
-      a sandbox at https://apisandbox.greenly.earth/v1.5 and production at
-      https://api.greenly.earth/v1.5. Access requires an API key obtained by
-      emailing contact@greenly.earth; the key is passed in the api-key
-      request header. JSON in and out; sample Postman requests are available.
-    humanURL: https://api.greenly.earth/v1.5
-    baseURL: https://api.greenly.earth/v1.5
-    tags:
-      - Carbon Analytics
-      - Carbon Footprint
-      - Transaction Enrichment
-      - Carbon Offsets
-      - Purchase Categories
-      - Fintech
-    properties:
-      - type: OpenAPI
-        url: openapi/greenly-carbon-analytics-api-openapi.yml
-      - type: Sandbox
-        url: https://apisandbox.greenly.earth/v1.5
-      - type: Production
-        url: https://api.greenly.earth/v1.5
-      - type: Documentation
-        url: https://bump.sh/greenly
-      - type: Authentication
-        url: https://api.greenly.earth/v1.5
-      - type: Support
-        url: mailto:contact@greenly.earth
+- aid: greenly-earth:greenly-earth-alternatives-api
+  name: Greenly alternatives API
+  description: The alternatives API from Greenly — 2 operation(s) for alternatives.
+  humanURL: https://api.greenly.earth/v1.5
+  baseURL: https://api.greenly.earth/v1.5
+  tags:
+  - alternatives
+  properties:
+  - type: OpenAPI
+    url: openapi/greenly-earth-alternatives-api-openapi.yml
+  - type: Sandbox
+    url: https://apisandbox.greenly.earth/v1.5
+  - type: Production
+    url: https://api.greenly.earth/v1.5
+  - type: Documentation
+    url: https://bump.sh/greenly
+  - type: Authentication
+    url: https://api.greenly.earth/v1.5
+  - type: Support
+    url: mailto:contact@greenly.earth
+- aid: greenly-earth:greenly-earth-live-api
+  name: Greenly live API
+  description: The live API from Greenly — 1 operation(s) for live.
+  humanURL: https://api.greenly.earth/v1.5
+  baseURL: https://api.greenly.earth/v1.5
+  tags:
+  - live
+  properties:
+  - type: OpenAPI
+    url: openapi/greenly-earth-live-api-openapi.yml
+  - type: Sandbox
+    url: https://apisandbox.greenly.earth/v1.5
+  - type: Production
+    url: https://api.greenly.earth/v1.5
+  - type: Documentation
+    url: https://bump.sh/greenly
+  - type: Authentication
+    url: https://api.greenly.earth/v1.5
+  - type: Support
+    url: mailto:contact@greenly.earth
+- aid: greenly-earth:greenly-earth-offsetprojects-api
+  name: Greenly offsetProjects API
+  description: The offsetProjects API from Greenly — 3 operation(s) for offsetprojects.
+  humanURL: https://api.greenly.earth/v1.5
+  baseURL: https://api.greenly.earth/v1.5
+  tags:
+  - offsetProjects
+  properties:
+  - type: OpenAPI
+    url: openapi/greenly-earth-offsetprojects-api-openapi.yml
+  - type: Sandbox
+    url: https://apisandbox.greenly.earth/v1.5
+  - type: Production
+    url: https://api.greenly.earth/v1.5
+  - type: Documentation
+    url: https://bump.sh/greenly
+  - type: Authentication
+    url: https://api.greenly.earth/v1.5
+  - type: Support
+    url: mailto:contact@greenly.earth
+- aid: greenly-earth:greenly-earth-purchasecategories-api
+  name: Greenly purchaseCategories API
+  description: The purchaseCategories API from Greenly — 2 operation(s) for purchasecategories.
+  humanURL: https://api.greenly.earth/v1.5
+  baseURL: https://api.greenly.earth/v1.5
+  tags:
+  - purchaseCategories
+  properties:
+  - type: OpenAPI
+    url: openapi/greenly-earth-purchasecategories-api-openapi.yml
+  - type: Sandbox
+    url: https://apisandbox.greenly.earth/v1.5
+  - type: Production
+    url: https://api.greenly.earth/v1.5
+  - type: Documentation
+    url: https://bump.sh/greenly
+  - type: Authentication
+    url: https://api.greenly.earth/v1.5
+  - type: Support
+    url: mailto:contact@greenly.earth
+- aid: greenly-earth:greenly-earth-ready-api
+  name: Greenly ready API
+  description: The ready API from Greenly — 1 operation(s) for ready.
+  humanURL: https://api.greenly.earth/v1.5
+  baseURL: https://api.greenly.earth/v1.5
+  tags:
+  - ready
+  properties:
+  - type: OpenAPI
+    url: openapi/greenly-earth-ready-api-openapi.yml
+  - type: Sandbox
+    url: https://apisandbox.greenly.earth/v1.5
+  - type: Production
+    url: https://api.greenly.earth/v1.5
+  - type: Documentation
+    url: https://bump.sh/greenly
+  - type: Authentication
+    url: https://api.greenly.earth/v1.5
+  - type: Support
+    url: mailto:contact@greenly.earth
+- aid: greenly-earth:greenly-earth-transactions-api
+  name: Greenly transactions API
+  description: The transactions API from Greenly — 1 operation(s) for transactions.
+  humanURL: https://api.greenly.earth/v1.5
+  baseURL: https://api.greenly.earth/v1.5
+  tags:
+  - transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/greenly-earth-transactions-api-openapi.yml
+  - type: Sandbox
+    url: https://apisandbox.greenly.earth/v1.5
+  - type: Production
+    url: https://api.greenly.earth/v1.5
+  - type: Documentation
+    url: https://bump.sh/greenly
+  - type: Authentication
+    url: https://api.greenly.earth/v1.5
+  - type: Support
+    url: mailto:contact@greenly.earth
+- aid: greenly-earth:greenly-earth-users-api
+  name: Greenly users API
+  description: The users API from Greenly — 2 operation(s) for users.
+  humanURL: https://api.greenly.earth/v1.5
+  baseURL: https://api.greenly.earth/v1.5
+  tags:
+  - users
+  properties:
+  - type: OpenAPI
+    url: openapi/greenly-earth-users-api-openapi.yml
+  - type: Sandbox
+    url: https://apisandbox.greenly.earth/v1.5
+  - type: Production
+    url: https://api.greenly.earth/v1.5
+  - type: Documentation
+    url: https://bump.sh/greenly
+  - type: Authentication
+    url: https://api.greenly.earth/v1.5
+  - type: Support
+    url: mailto:contact@greenly.earth
 common:
   - type: AgenticAccess
     url: agentic-access/greenly-earth-agentic-access.yml
