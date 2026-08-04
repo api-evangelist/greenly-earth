@@ -1,0 +1,26 @@
+{
+  "provider": "greenly-earth",
+  "sources": [
+    "greenly-earth-alternatives-api-openapi.yml",
+    "greenly-earth-live-api-openapi.yml",
+    "greenly-earth-offsetprojects-api-openapi.yml",
+    "greenly-earth-purchasecategories-api-openapi.yml",
+    "greenly-earth-ready-api-openapi.yml",
+    "greenly-earth-transactions-api-openapi.yml",
+    "greenly-earth-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "greenly-earth-alternatives-api-openapi.yml",
+    "greenly-earth-live-api-openapi.yml",
+    "greenly-earth-offsetprojects-api-openapi.yml",
+    "greenly-earth-purchasecategories-api-openapi.yml",
+    "greenly-earth-ready-api-openapi.yml",
+    "greenly-earth-transactions-api-openapi.yml",
+    "greenly-earth-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
