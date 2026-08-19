@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Greenly Carbon Analytics alternatives transactions API",
+    "version": "1.5"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "transactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Calculate carbon footprints",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.greenly.earth/v1.5/transactions/calculateCarbonFootprints",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculate the carbon footprints of the input transactions"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

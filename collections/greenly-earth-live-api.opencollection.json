@@ -1,0 +1,28 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Greenly Carbon Analytics alternatives live API",
+    "version": "1.5"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "live",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "IsLive",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.greenly.earth/v1.5/live"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

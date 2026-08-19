@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Greenly Carbon Analytics alternatives API",
+    "version": "1.5"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "alternatives",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all alternatives",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.greenly.earth/v1.5/alternatives"
+          },
+          "docs": "Retrieve the details of all low-carbon alternatives, either advices or low-carbon provider."
+        },
+        {
+          "info": {
+            "name": "Get alternative",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.greenly.earth/v1.5/alternatives/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve the details of one low-carbon alternative, either advice or low-carbon provider."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Greenly Carbon Analytics alternatives purchaseCategories API",
+    "version": "1.5"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "purchaseCategories",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all purchase categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.greenly.earth/v1.5/purchaseCategories",
+            "params": [
+              {
+                "name": "countryId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve the details of all purchase categories."
+        },
+        {
+          "info": {
+            "name": "Get purchase category",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.greenly.earth/v1.5/purchaseCategories/:purchaseCategoryId",
+            "params": [
+              {
+                "name": "purchaseCategoryId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "countryId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve the details of one purchase category."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

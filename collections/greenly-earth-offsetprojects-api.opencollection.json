@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Greenly Carbon Analytics alternatives offsetProjects API",
+    "version": "1.5"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "offsetProjects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all offset projects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.greenly.earth/v1.5/offsetProjects"
+          },
+          "docs": "Retrieve the details of all offset projects"
+        },
+        {
+          "info": {
+            "name": "Get offset project",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.greenly.earth/v1.5/offsetProjects/:offsetProjectId",
+            "params": [
+              {
+                "name": "offsetProjectId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve the details of one offset project."
+        },
+        {
+          "info": {
+            "name": "Book offset project",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.greenly.earth/v1.5/offsetProjects/bookOffsetQuantity",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Booking a quantity of CO2 equivalent to offset from an offset project"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
