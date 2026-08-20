@@ -69,6 +69,8 @@ apis:
   humanURL: https://api.greenly.earth/v1.5
   baseURL: https://api.greenly.earth/v1.5
   tags:
+  - Alternatives
+  tags_raw:
   - alternatives
   properties:
   - type: OpenAPI
@@ -89,6 +91,8 @@ apis:
   humanURL: https://api.greenly.earth/v1.5
   baseURL: https://api.greenly.earth/v1.5
   tags:
+  - Live
+  tags_raw:
   - live
   properties:
   - type: OpenAPI
@@ -108,7 +112,8 @@ apis:
   description: The offsetProjects API from Greenly — 3 operation(s) for offsetprojects.
   humanURL: https://api.greenly.earth/v1.5
   baseURL: https://api.greenly.earth/v1.5
-  tags:
+  tags: []
+  tags_raw:
   - offsetProjects
   properties:
   - type: OpenAPI
@@ -128,7 +133,8 @@ apis:
   description: The purchaseCategories API from Greenly — 2 operation(s) for purchasecategories.
   humanURL: https://api.greenly.earth/v1.5
   baseURL: https://api.greenly.earth/v1.5
-  tags:
+  tags: []
+  tags_raw:
   - purchaseCategories
   properties:
   - type: OpenAPI
@@ -149,6 +155,8 @@ apis:
   humanURL: https://api.greenly.earth/v1.5
   baseURL: https://api.greenly.earth/v1.5
   tags:
+  - Ready
+  tags_raw:
   - ready
   properties:
   - type: OpenAPI
@@ -169,6 +177,8 @@ apis:
   humanURL: https://api.greenly.earth/v1.5
   baseURL: https://api.greenly.earth/v1.5
   tags:
+  - Transaction
+  tags_raw:
   - transactions
   properties:
   - type: OpenAPI
@@ -189,6 +199,8 @@ apis:
   humanURL: https://api.greenly.earth/v1.5
   baseURL: https://api.greenly.earth/v1.5
   tags:
+  - User
+  tags_raw:
   - users
   properties:
   - type: OpenAPI
