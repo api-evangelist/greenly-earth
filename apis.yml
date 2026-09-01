@@ -81,7 +81,7 @@ apis:
   humanURL: https://api.greenly.earth/v1.5
   baseURL: https://api.greenly.earth/v1.5
   tags:
-  - alternatives
+  - Alternatives
   tags_raw:
   - alternatives
   properties:
@@ -103,7 +103,7 @@ apis:
   humanURL: https://api.greenly.earth/v1.5
   baseURL: https://api.greenly.earth/v1.5
   tags:
-  - live
+  - Live
   tags_raw:
   - live
   properties:
@@ -145,7 +145,8 @@ apis:
   description: The purchaseCategories API from Greenly — 2 operation(s) for purchasecategories.
   humanURL: https://api.greenly.earth/v1.5
   baseURL: https://api.greenly.earth/v1.5
-  tags: []
+  tags:
+  - PurchaseCategories
   tags_raw:
   - purchaseCategories
   properties:
@@ -167,7 +168,7 @@ apis:
   humanURL: https://api.greenly.earth/v1.5
   baseURL: https://api.greenly.earth/v1.5
   tags:
-  - ready
+  - Ready
   tags_raw:
   - ready
   properties:
