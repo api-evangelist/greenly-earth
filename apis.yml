@@ -141,28 +141,6 @@ apis:
     url: https://api.greenly.earth/v1.5
   - type: Support
     url: mailto:contact@greenly.earth
-- aid: greenly-earth:greenly-earth-purchasecategories-api
-  name: Greenly purchaseCategories API
-  description: The purchaseCategories API from Greenly — 2 operation(s) for purchasecategories.
-  humanURL: https://api.greenly.earth/v1.5
-  baseURL: https://api.greenly.earth/v1.5
-  tags:
-  - PurchaseCategories
-  tags_raw:
-  - purchaseCategories
-  properties:
-  - type: OpenAPI
-    url: openapi/greenly-earth-purchasecategories-api-openapi.yml
-  - type: Sandbox
-    url: https://apisandbox.greenly.earth/v1.5
-  - type: Production
-    url: https://api.greenly.earth/v1.5
-  - type: Documentation
-    url: https://bump.sh/greenly
-  - type: Authentication
-    url: https://api.greenly.earth/v1.5
-  - type: Support
-    url: mailto:contact@greenly.earth
 - aid: greenly-earth:greenly-earth-ready-api
   name: Greenly ready API
   description: The ready API from Greenly — 1 operation(s) for ready.
@@ -219,6 +197,26 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/greenly-earth-users-api-openapi.yml
+  - type: Sandbox
+    url: https://apisandbox.greenly.earth/v1.5
+  - type: Production
+    url: https://api.greenly.earth/v1.5
+  - type: Documentation
+    url: https://bump.sh/greenly
+  - type: Authentication
+    url: https://api.greenly.earth/v1.5
+  - type: Support
+    url: mailto:contact@greenly.earth
+- aid: greenly-earth:greenly-earth-purchase-categories-api
+  name: Greenly Purchase Categories API
+  description: The Purchase Categories API from Greenly — 2 operation(s) for purchase categories.
+  humanURL: https://api.greenly.earth/v1.5
+  baseURL: https://api.greenly.earth/v1.5
+  tags:
+  - Purchase Categories
+  properties:
+  - type: OpenAPI
+    url: openapi/greenly-earth-purchase-categories-api-openapi.yml
   - type: Sandbox
     url: https://apisandbox.greenly.earth/v1.5
   - type: Production
