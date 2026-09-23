@@ -1,13 +1,7 @@
 {
   "provider": "greenly-earth",
   "sources": [
-    "greenly-earth-alternatives-api-openapi.yml",
-    "greenly-earth-live-api-openapi.yml",
-    "greenly-earth-offsetprojects-api-openapi.yml",
-    "greenly-earth-purchasecategories-api-openapi.yml",
-    "greenly-earth-ready-api-openapi.yml",
-    "greenly-earth-transactions-api-openapi.yml",
-    "greenly-earth-users-api-openapi.yml"
+    "_original/greenly-carbon-analytics-api-openapi.yml"
   ],
   "outputs": [
     "greenly-earth-alternatives-api-openapi.yml",
@@ -18,9 +12,31 @@
     "greenly-earth-transactions-api-openapi.yml",
     "greenly-earth-users-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "greenly-carbon-analytics-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "greenly-carbon-analytics-api-openapi.yml: declared missing tag: alternatives",
+    "greenly-carbon-analytics-api-openapi.yml: declared missing tag: live",
+    "greenly-carbon-analytics-api-openapi.yml: declared missing tag: offsetProjects",
+    "greenly-carbon-analytics-api-openapi.yml: declared missing tag: purchaseCategories",
+    "greenly-carbon-analytics-api-openapi.yml: declared missing tag: ready",
+    "greenly-carbon-analytics-api-openapi.yml: declared missing tag: transactions",
+    "greenly-carbon-analytics-api-openapi.yml: declared missing tag: users",
+    "superseded outputs removed: greenly-earth-purchase-categories-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 7 total)"
+  ],
+  "skipped": [
+    "greenly-earth-alternatives-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "greenly-earth-live-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "greenly-earth-offsetprojects-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "greenly-earth-purchase-categories-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "greenly-earth-ready-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "greenly-earth-transactions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "greenly-earth-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

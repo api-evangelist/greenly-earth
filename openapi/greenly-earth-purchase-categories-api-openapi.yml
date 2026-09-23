@@ -1,0 +1,182 @@
+openapi: 3.2.0
+info:
+  title: Greenly Carbon Analytics Purchase Categories API
+  version: '1.5'
+  description: '# Introduction
+
+    The Greenly Carbon Analytics API is a set of RESTful services which enable the enrichment of bank transactions with carbon footprint analytics.'
+  contact:
+    email: contact@greenly.earth
+servers:
+- url: https://api.greenly.earth/v1.5
+tags:
+- name: Purchase Categories
+paths:
+  /purchaseCategories:
+    get:
+      operationId: GetPurchaseCategories
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/PurchaseCategoryOutput'
+                type: array
+        '401':
+          description: Authentication Failed
+        '500':
+          description: An unexpected error occurred while processing the request
+      description: Retrieve the details of all purchase categories.
+      summary: Get all purchase categories
+      tags:
+      - Purchase Categories
+      security: []
+      parameters:
+      - in: query
+        name: countryId
+        required: false
+        schema:
+          type: string
+  /purchaseCategories/{purchaseCategoryId}:
+    get:
+      operationId: GetPurchaseCategory
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                anyOf:
+                - $ref: '#/components/schemas/PurchaseCategoryOutput'
+                - {}
+        '401':
+          description: Authentication Failed
+        '404':
+          description: Resource not found
+        '500':
+          description: An unexpected error occurred while processing the request
+      description: Retrieve the details of one purchase category.
+      summary: Get purchase category
+      tags:
+      - Purchase Categories
+      security: []
+      parameters:
+      - in: path
+        name: purchaseCategoryId
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: countryId
+        required: false
+        schema:
+          type: string
+components:
+  schemas:
+    PurchaseCategoryNameTranslations:
+      $ref: '#/components/schemas/Translations'
+      description: Name of the purchase category in multilingual format
+    TagType:
+      enum:
+      - boolean
+      - number
+      - enum
+      type: string
+    Translations:
+      $ref: '#/components/schemas/Record_Language.string_'
+    EnumValueTranslated:
+      properties:
+        translations:
+          $ref: '#/components/schemas/Translations'
+          description: Translations of the enum value
+        id:
+          type: string
+          description: Id of the enum value
+      required:
+      - translations
+      - id
+      type: object
+    Record_Language.string_:
+      properties:
+        en:
+          type: string
+        fr:
+          type: string
+        es:
+          type: string
+        it:
+          type: string
+        sv:
+          type: string
+        de:
+          type: string
+      type: object
+      description: Construct a type with a set of properties K of type T
+    PurchaseCategoryOutput:
+      properties:
+        possibleTags:
+          items:
+            $ref: '#/components/schemas/Tag'
+          type: array
+          description: 'Possible tags that can be applied to transactions in this purchase category.
+
+            In case of enum, the list of potential values is available.'
+        translations:
+          $ref: '#/components/schemas/PurchaseCategoryNameTranslations'
+        parentPurchaseCategory:
+          $ref: '#/components/schemas/ParentPurchaseCategoryId'
+          description: Parent purchase category which defines the larger type of the purchase (food, housing, transport, etc)
+        methodology:
+          $ref: '#/components/schemas/PurchaseCategoryMethodologyTranslations'
+        id:
+          type: string
+          description: Unique identifier of the purchase category
+      required:
+      - possibleTags
+      - translations
+      - parentPurchaseCategory
+      - methodology
+      - id
+      type: object
+    ParentPurchaseCategoryId:
+      enum:
+      - Transport
+      - Food
+      - Shopping
+      - Services
+      - Housing
+      - Uncategorized
+      type: string
+    PurchaseCategoryMethodologyTranslations:
+      $ref: '#/components/schemas/Translations'
+      description: 'Methodology used to calculate the carbon footprint of transactions belonging to this purchase category.
+
+        In case of tags applied to the transaction, a methodology is also available within the tag definition.'
+    Tag:
+      properties:
+        translations:
+          $ref: '#/components/schemas/Translations'
+          description: Translations of the tag description
+        enumValues:
+          items:
+            $ref: '#/components/schemas/EnumValueTranslated'
+          type: array
+          description: Possible values for the tag in case of enum
+        type:
+          $ref: '#/components/schemas/TagType'
+          description: Type of the tag
+        id:
+          type: string
+          description: Id of the tag
+      required:
+      - translations
+      - type
+      - id
+      type: object
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: api-key
+      in: header
