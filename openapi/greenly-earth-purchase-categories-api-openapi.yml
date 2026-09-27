@@ -75,17 +75,6 @@ paths:
           type: string
 components:
   schemas:
-    PurchaseCategoryNameTranslations:
-      $ref: '#/components/schemas/Translations'
-      description: Name of the purchase category in multilingual format
-    TagType:
-      enum:
-      - boolean
-      - number
-      - enum
-      type: string
-    Translations:
-      $ref: '#/components/schemas/Record_Language.string_'
     EnumValueTranslated:
       properties:
         translations:
@@ -98,6 +87,20 @@ components:
       - translations
       - id
       type: object
+    PurchaseCategoryMethodologyTranslations:
+      $ref: '#/components/schemas/Translations'
+      description: 'Methodology used to calculate the carbon footprint of transactions belonging to this purchase category.
+
+        In case of tags applied to the transaction, a methodology is also available within the tag definition.'
+    ParentPurchaseCategoryId:
+      enum:
+      - Transport
+      - Food
+      - Shopping
+      - Services
+      - Housing
+      - Uncategorized
+      type: string
     Record_Language.string_:
       properties:
         en:
@@ -114,6 +117,9 @@ components:
           type: string
       type: object
       description: Construct a type with a set of properties K of type T
+    PurchaseCategoryNameTranslations:
+      $ref: '#/components/schemas/Translations'
+      description: Name of the purchase category in multilingual format
     PurchaseCategoryOutput:
       properties:
         possibleTags:
@@ -140,20 +146,14 @@ components:
       - methodology
       - id
       type: object
-    ParentPurchaseCategoryId:
+    TagType:
       enum:
-      - Transport
-      - Food
-      - Shopping
-      - Services
-      - Housing
-      - Uncategorized
+      - boolean
+      - number
+      - enum
       type: string
-    PurchaseCategoryMethodologyTranslations:
-      $ref: '#/components/schemas/Translations'
-      description: 'Methodology used to calculate the carbon footprint of transactions belonging to this purchase category.
-
-        In case of tags applied to the transaction, a methodology is also available within the tag definition.'
+    Translations:
+      $ref: '#/components/schemas/Record_Language.string_'
     Tag:
       properties:
         translations:

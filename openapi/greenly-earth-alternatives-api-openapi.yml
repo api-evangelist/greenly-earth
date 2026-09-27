@@ -65,6 +65,36 @@ paths:
           type: string
 components:
   schemas:
+    CountryId:
+      enum:
+      - GB
+      - FR
+      - ES
+      - IT
+      - SE
+      - DE
+      type: string
+    AlternativeDescriptionTranslations:
+      $ref: '#/components/schemas/Translations'
+      description: 'Very short intuitive description of the suggested low-carbon advice or provider
+
+        (tweet format with less than 280 characters) in our multilingual format.'
+    Record_Language.string_:
+      properties:
+        en:
+          type: string
+        fr:
+          type: string
+        es:
+          type: string
+        it:
+          type: string
+        sv:
+          type: string
+        de:
+          type: string
+      type: object
+      description: Construct a type with a set of properties K of type T
     AlternativeOutput:
       properties:
         recommendedProviders:
@@ -112,38 +142,6 @@ components:
       - isProviderAlternative
       - id
       type: object
-    AlternativeDescriptionTranslations:
-      $ref: '#/components/schemas/Translations'
-      description: 'Very short intuitive description of the suggested low-carbon advice or provider
-
-        (tweet format with less than 280 characters) in our multilingual format.'
-    Translations:
-      $ref: '#/components/schemas/Record_Language.string_'
-    Record_Language.string_:
-      properties:
-        en:
-          type: string
-        fr:
-          type: string
-        es:
-          type: string
-        it:
-          type: string
-        sv:
-          type: string
-        de:
-          type: string
-      type: object
-      description: Construct a type with a set of properties K of type T
-    CountryId:
-      enum:
-      - GB
-      - FR
-      - ES
-      - IT
-      - SE
-      - DE
-      type: string
     RecommendedProviderOutput:
       properties:
         logoUrl:
@@ -164,6 +162,8 @@ components:
       - url
       - name
       type: object
+    Translations:
+      $ref: '#/components/schemas/Record_Language.string_'
   securitySchemes:
     api_key:
       type: apiKey

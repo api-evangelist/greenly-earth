@@ -108,8 +108,38 @@ components:
       - totalPrice
       - bookingSuccessful
       type: object
-    Translations:
-      $ref: '#/components/schemas/Record_Language.string_'
+    Record_Language.string_:
+      properties:
+        en:
+          type: string
+        fr:
+          type: string
+        es:
+          type: string
+        it:
+          type: string
+        sv:
+          type: string
+        de:
+          type: string
+      type: object
+      description: Construct a type with a set of properties K of type T
+    BookOffsetArgs:
+      properties:
+        email:
+          type: string
+          description: (Optional) Email of the user carrying out the booking
+        bookedOffsetInTCO2eq:
+          type: number
+          format: double
+          description: Quantity of offsetting being booked (in TCO2eq)
+        offsetProjectId:
+          type: string
+          description: Unique identifier of the chosen project
+      required:
+      - bookedOffsetInTCO2eq
+      - offsetProjectId
+      type: object
     OffsetProjectOutput:
       properties:
         remainingOffsetInTCO2eq:
@@ -169,38 +199,8 @@ components:
       - name
       - id
       type: object
-    BookOffsetArgs:
-      properties:
-        email:
-          type: string
-          description: (Optional) Email of the user carrying out the booking
-        bookedOffsetInTCO2eq:
-          type: number
-          format: double
-          description: Quantity of offsetting being booked (in TCO2eq)
-        offsetProjectId:
-          type: string
-          description: Unique identifier of the chosen project
-      required:
-      - bookedOffsetInTCO2eq
-      - offsetProjectId
-      type: object
-    Record_Language.string_:
-      properties:
-        en:
-          type: string
-        fr:
-          type: string
-        es:
-          type: string
-        it:
-          type: string
-        sv:
-          type: string
-        de:
-          type: string
-      type: object
-      description: Construct a type with a set of properties K of type T
+    Translations:
+      $ref: '#/components/schemas/Record_Language.string_'
   securitySchemes:
     api_key:
       type: apiKey
