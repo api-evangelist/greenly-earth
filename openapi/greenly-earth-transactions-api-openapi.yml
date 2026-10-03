@@ -46,17 +46,62 @@ paths:
               $ref: '#/components/schemas/CalculateCarbonFootprintsArgs'
 components:
   schemas:
-    Opaque_AlternativeId.string_:
-      allOf:
-      - type: string
-      - properties:
-          __TYPE__:
-            type: string
-            enum:
-            - AlternativeId
-        required:
-        - __TYPE__
-        type: object
+    AlternativeId:
+      $ref: '#/components/schemas/Opaque_AlternativeId.string_'
+    CalculateCarbonFootprintsOutput:
+      items:
+        $ref: '#/components/schemas/CarbonFootprintOutput'
+      type: array
+    RecommendedProviderOutput:
+      properties:
+        logoUrl:
+          type:
+          - string
+          - 'null'
+          description: Url of the provider's logo stored in svg format.
+        url:
+          type:
+          - string
+          - 'null'
+          description: Url of the recommended provider.
+        name:
+          type: string
+          description: Name of the recommended provider.
+      required:
+      - logoUrl
+      - url
+      - name
+      type: object
+    Pick_CarbonFootprint.emissionsInKg-or-avoidedEmissionsInKg_:
+      properties:
+        emissionsInKg:
+          type: number
+          format: double
+          description: Emissions generated in kg of CO2 equivalent (all greenhouse gas are converted to CO2).
+        avoidedEmissionsInKg:
+          type: number
+          format: double
+          description: 'Emissions avoided in kg of CO2 equivalent (all greenhouse gas are converted to CO2).
+
+            Emissions avoided are calculated in regard to a reference situation that can be found
+
+            in the methodology (e.g. carsharing vs driving solo in your car)'
+      required:
+      - emissionsInKg
+      - avoidedEmissionsInKg
+      type: object
+      description: From T, pick a set of properties whose keys are in the union K
+    CountryId:
+      enum:
+      - GB
+      - FR
+      - ES
+      - IT
+      - SE
+      - DE
+      type: string
+    Translations:
+      $ref: '#/components/schemas/Record_Language.string_'
     Translation:
       properties:
         de:
@@ -72,6 +117,11 @@ components:
         fr:
           type: string
       type: object
+    AlternativeDescriptionTranslations:
+      $ref: '#/components/schemas/Translations'
+      description: 'Very short intuitive description of the suggested low-carbon advice or provider
+
+        (tweet format with less than 280 characters) in our multilingual format.'
     TransactionType:
       description: 'The input type is type of the bank transaction and can take any of the following values:
 
@@ -127,6 +177,88 @@ components:
       - DIRECT_DEBIT
       - OTHER
       type: string
+    CarbonFootprintEquivalents:
+      properties:
+        avoidedEmissionsInKgEquivalent:
+          allOf:
+          - $ref: '#/components/schemas/Translation'
+          description: intuitive equivalent for the avoided CO2e emissions
+        emissionsInKgEquivalent:
+          allOf:
+          - $ref: '#/components/schemas/Translation'
+          description: intuitive equivalent for the emitted CO2e emissions
+      required:
+      - avoidedEmissionsInKgEquivalent
+      - emissionsInKgEquivalent
+      type: object
+      description: Intuitive illustration of the calculated carbon footprint in terms of day to day actions and objects
+    Language:
+      enum:
+      - en
+      - fr
+      - es
+      - it
+      - sv
+      - de
+      type: string
+    Pick_Transaction.tagValues_:
+      properties:
+        tagValues:
+          items:
+            $ref: '#/components/schemas/TagValue'
+          type: array
+          description: Set of tag values applied to the transaction. These have an influence on carbon footprint calculation.
+      required:
+      - tagValues
+      type: object
+      description: From T, pick a set of properties whose keys are in the union K
+    CalculateCarbonFootprintsArgs:
+      properties:
+        languages:
+          items:
+            $ref: '#/components/schemas/Language'
+          type: array
+          description: 'languages requested for the methodologies.
+
+            If no language is provided we use a default language based on the countryId of the transaction.'
+        transactions:
+          items:
+            $ref: '#/components/schemas/InputTransaction'
+          type: array
+          description: List of the user transactions.
+        userId:
+          type: string
+          description: Id of the user owning the transactions.
+      required:
+      - transactions
+      type: object
+    Record_Language.string_:
+      properties:
+        en:
+          type: string
+        fr:
+          type: string
+        es:
+          type: string
+        it:
+          type: string
+        sv:
+          type: string
+        de:
+          type: string
+      type: object
+      description: Construct a type with a set of properties K of type T
+    Opaque_AlternativeId.string_:
+      allOf:
+      - type: string
+      - properties:
+          __TYPE__:
+            type: string
+            enum:
+            - AlternativeId
+        required:
+        - __TYPE__
+        type: object
     InputTransaction:
       properties:
         countryCode:
@@ -202,6 +334,53 @@ components:
       description: 'Represents a transaction which can be either a bank transaction
 
         or a cash transaction'
+    AlternativeOutput:
+      properties:
+        recommendedProviders:
+          items:
+            $ref: '#/components/schemas/RecommendedProviderOutput'
+          type: array
+          description: List of alternative providers
+        ratioEstimatedReduction:
+          type:
+          - number
+          - 'null'
+          format: double
+          description: 'Estimated average reduction resulting from the suggested low-carbon alternative. Hence a ratio of 0.66 means a reduction
+
+            of 66%, i.e., that the carbon footprint is divided by 3.'
+        sources:
+          items:
+            type: string
+          type:
+          - array
+          - 'null'
+          description: A list of url. Can be null.
+        description:
+          $ref: '#/components/schemas/AlternativeDescriptionTranslations'
+        geographicalRestriction:
+          allOf:
+          - $ref: '#/components/schemas/CountryId'
+          description: 'If specified, it means the alternative is valid only for the specified country.
+
+            If null, then the alternative is valid everywhere.'
+        isProviderAlternative:
+          type: boolean
+          description: 'boolean to indicate whether the alternative is a general advice/behaviour alternative or is related to
+
+            a specific alternative provider.'
+        id:
+          type: string
+          description: UUID4 unique identifier of the alternative
+      required:
+      - recommendedProviders
+      - ratioEstimatedReduction
+      - sources
+      - description
+      - geographicalRestriction
+      - isProviderAlternative
+      - id
+      type: object
     TagValue:
       properties:
         value:
@@ -216,118 +395,6 @@ components:
       - value
       - tagId
       type: object
-    Record_Language.string_:
-      properties:
-        en:
-          type: string
-        fr:
-          type: string
-        es:
-          type: string
-        it:
-          type: string
-        sv:
-          type: string
-        de:
-          type: string
-      type: object
-      description: Construct a type with a set of properties K of type T
-    Pick_CarbonFootprint.emissionsInKg-or-avoidedEmissionsInKg_:
-      properties:
-        emissionsInKg:
-          type: number
-          format: double
-          description: Emissions generated in kg of CO2 equivalent (all greenhouse gas are converted to CO2).
-        avoidedEmissionsInKg:
-          type: number
-          format: double
-          description: 'Emissions avoided in kg of CO2 equivalent (all greenhouse gas are converted to CO2).
-
-            Emissions avoided are calculated in regard to a reference situation that can be found
-
-            in the methodology (e.g. carsharing vs driving solo in your car)'
-      required:
-      - emissionsInKg
-      - avoidedEmissionsInKg
-      type: object
-      description: From T, pick a set of properties whose keys are in the union K
-    CalculateCarbonFootprintsOutput:
-      items:
-        $ref: '#/components/schemas/CarbonFootprintOutput'
-      type: array
-    CarbonFootprintEquivalents:
-      properties:
-        avoidedEmissionsInKgEquivalent:
-          allOf:
-          - $ref: '#/components/schemas/Translation'
-          description: intuitive equivalent for the avoided CO2e emissions
-        emissionsInKgEquivalent:
-          allOf:
-          - $ref: '#/components/schemas/Translation'
-          description: intuitive equivalent for the emitted CO2e emissions
-      required:
-      - avoidedEmissionsInKgEquivalent
-      - emissionsInKgEquivalent
-      type: object
-      description: Intuitive illustration of the calculated carbon footprint in terms of day to day actions and objects
-    AlternativeDescriptionTranslations:
-      $ref: '#/components/schemas/Translations'
-      description: 'Very short intuitive description of the suggested low-carbon advice or provider
-
-        (tweet format with less than 280 characters) in our multilingual format.'
-    RecommendedProviderOutput:
-      properties:
-        logoUrl:
-          type:
-          - string
-          - 'null'
-          description: Url of the provider's logo stored in svg format.
-        url:
-          type:
-          - string
-          - 'null'
-          description: Url of the recommended provider.
-        name:
-          type: string
-          description: Name of the recommended provider.
-      required:
-      - logoUrl
-      - url
-      - name
-      type: object
-    Language:
-      enum:
-      - en
-      - fr
-      - es
-      - it
-      - sv
-      - de
-      type: string
-    Translations:
-      $ref: '#/components/schemas/Record_Language.string_'
-    CountryId:
-      enum:
-      - GB
-      - FR
-      - ES
-      - IT
-      - SE
-      - DE
-      type: string
-    Pick_Transaction.tagValues_:
-      properties:
-        tagValues:
-          items:
-            $ref: '#/components/schemas/TagValue'
-          type: array
-          description: Set of tag values applied to the transaction. These have an influence on carbon footprint calculation.
-      required:
-      - tagValues
-      type: object
-      description: From T, pick a set of properties whose keys are in the union K
-    AlternativeId:
-      $ref: '#/components/schemas/Opaque_AlternativeId.string_'
     CarbonFootprintOutput:
       allOf:
       - $ref: '#/components/schemas/Pick_Transaction.tagValues_'
@@ -398,73 +465,6 @@ components:
         - carbonFootprintEquivalents
         - carbonFootprint
         type: object
-    AlternativeOutput:
-      properties:
-        recommendedProviders:
-          items:
-            $ref: '#/components/schemas/RecommendedProviderOutput'
-          type: array
-          description: List of alternative providers
-        ratioEstimatedReduction:
-          type:
-          - number
-          - 'null'
-          format: double
-          description: 'Estimated average reduction resulting from the suggested low-carbon alternative. Hence a ratio of 0.66 means a reduction
-
-            of 66%, i.e., that the carbon footprint is divided by 3.'
-        sources:
-          items:
-            type: string
-          type:
-          - array
-          - 'null'
-          description: A list of url. Can be null.
-        description:
-          $ref: '#/components/schemas/AlternativeDescriptionTranslations'
-        geographicalRestriction:
-          allOf:
-          - $ref: '#/components/schemas/CountryId'
-          description: 'If specified, it means the alternative is valid only for the specified country.
-
-            If null, then the alternative is valid everywhere.'
-        isProviderAlternative:
-          type: boolean
-          description: 'boolean to indicate whether the alternative is a general advice/behaviour alternative or is related to
-
-            a specific alternative provider.'
-        id:
-          type: string
-          description: UUID4 unique identifier of the alternative
-      required:
-      - recommendedProviders
-      - ratioEstimatedReduction
-      - sources
-      - description
-      - geographicalRestriction
-      - isProviderAlternative
-      - id
-      type: object
-    CalculateCarbonFootprintsArgs:
-      properties:
-        languages:
-          items:
-            $ref: '#/components/schemas/Language'
-          type: array
-          description: 'languages requested for the methodologies.
-
-            If no language is provided we use a default language based on the countryId of the transaction.'
-        transactions:
-          items:
-            $ref: '#/components/schemas/InputTransaction'
-          type: array
-          description: List of the user transactions.
-        userId:
-          type: string
-          description: Id of the user owning the transactions.
-      required:
-      - transactions
-      type: object
   securitySchemes:
     api_key:
       type: apiKey

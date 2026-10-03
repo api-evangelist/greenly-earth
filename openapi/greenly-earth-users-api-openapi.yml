@@ -125,26 +125,6 @@ paths:
           type: string
 components:
   schemas:
-    UserProfile:
-      allOf:
-      - $ref: '#/components/schemas/Pick_Profile.defaultTagValues_'
-      - properties:
-          userId:
-            type: string
-        required:
-        - userId
-        type: object
-    Pick_Profile.defaultTagValues_:
-      properties:
-        defaultTagValues:
-          items:
-            $ref: '#/components/schemas/TagValue'
-          type: array
-          description: Set of tag values that are set as default for this user's transactions.
-      required:
-      - defaultTagValues
-      type: object
-      description: From T, pick a set of properties whose keys are in the union K
     TagValue:
       properties:
         value:
@@ -168,6 +148,26 @@ components:
       required:
       - defaultTagValues
       type: object
+    Pick_Profile.defaultTagValues_:
+      properties:
+        defaultTagValues:
+          items:
+            $ref: '#/components/schemas/TagValue'
+          type: array
+          description: Set of tag values that are set as default for this user's transactions.
+      required:
+      - defaultTagValues
+      type: object
+      description: From T, pick a set of properties whose keys are in the union K
+    UserProfile:
+      allOf:
+      - $ref: '#/components/schemas/Pick_Profile.defaultTagValues_'
+      - properties:
+          userId:
+            type: string
+        required:
+        - userId
+        type: object
   securitySchemes:
     api_key:
       type: apiKey

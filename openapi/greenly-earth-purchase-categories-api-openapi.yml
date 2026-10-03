@@ -75,6 +75,11 @@ paths:
           type: string
 components:
   schemas:
+    PurchaseCategoryMethodologyTranslations:
+      $ref: '#/components/schemas/Translations'
+      description: 'Methodology used to calculate the carbon footprint of transactions belonging to this purchase category.
+
+        In case of tags applied to the transaction, a methodology is also available within the tag definition.'
     EnumValueTranslated:
       properties:
         translations:
@@ -87,11 +92,27 @@ components:
       - translations
       - id
       type: object
-    PurchaseCategoryMethodologyTranslations:
-      $ref: '#/components/schemas/Translations'
-      description: 'Methodology used to calculate the carbon footprint of transactions belonging to this purchase category.
-
-        In case of tags applied to the transaction, a methodology is also available within the tag definition.'
+    Tag:
+      properties:
+        translations:
+          $ref: '#/components/schemas/Translations'
+          description: Translations of the tag description
+        enumValues:
+          items:
+            $ref: '#/components/schemas/EnumValueTranslated'
+          type: array
+          description: Possible values for the tag in case of enum
+        type:
+          $ref: '#/components/schemas/TagType'
+          description: Type of the tag
+        id:
+          type: string
+          description: Id of the tag
+      required:
+      - translations
+      - type
+      - id
+      type: object
     ParentPurchaseCategoryId:
       enum:
       - Transport
@@ -100,6 +121,12 @@ components:
       - Services
       - Housing
       - Uncategorized
+      type: string
+    TagType:
+      enum:
+      - boolean
+      - number
+      - enum
       type: string
     Record_Language.string_:
       properties:
@@ -146,35 +173,8 @@ components:
       - methodology
       - id
       type: object
-    TagType:
-      enum:
-      - boolean
-      - number
-      - enum
-      type: string
     Translations:
       $ref: '#/components/schemas/Record_Language.string_'
-    Tag:
-      properties:
-        translations:
-          $ref: '#/components/schemas/Translations'
-          description: Translations of the tag description
-        enumValues:
-          items:
-            $ref: '#/components/schemas/EnumValueTranslated'
-          type: array
-          description: Possible values for the tag in case of enum
-        type:
-          $ref: '#/components/schemas/TagType'
-          description: Type of the tag
-        id:
-          type: string
-          description: Id of the tag
-      required:
-      - translations
-      - type
-      - id
-      type: object
   securitySchemes:
     api_key:
       type: apiKey
