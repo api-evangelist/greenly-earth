@@ -252,6 +252,9 @@ apis:
   - type: Support
     url: mailto:contact@greenly.earth
 common:
+  - type: CapabilityMap
+    url: capabilities/greenly-earth-capability-edges.yml
+    name: Greenly Business Capability Map
   - type: AgenticAccess
     url: agentic-access/greenly-earth-agentic-access.yml
   - type: DomainSecurity
