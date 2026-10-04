@@ -46,12 +46,134 @@ paths:
               $ref: '#/components/schemas/CalculateCarbonFootprintsArgs'
 components:
   schemas:
-    AlternativeId:
-      $ref: '#/components/schemas/Opaque_AlternativeId.string_'
-    CalculateCarbonFootprintsOutput:
-      items:
-        $ref: '#/components/schemas/CarbonFootprintOutput'
-      type: array
+    AlternativeOutput:
+      properties:
+        recommendedProviders:
+          items:
+            $ref: '#/components/schemas/RecommendedProviderOutput'
+          type: array
+          description: List of alternative providers
+        ratioEstimatedReduction:
+          type:
+          - number
+          - 'null'
+          format: double
+          description: 'Estimated average reduction resulting from the suggested low-carbon alternative. Hence a ratio of 0.66 means a reduction
+
+            of 66%, i.e., that the carbon footprint is divided by 3.'
+        sources:
+          items:
+            type: string
+          type:
+          - array
+          - 'null'
+          description: A list of url. Can be null.
+        description:
+          $ref: '#/components/schemas/AlternativeDescriptionTranslations'
+        geographicalRestriction:
+          allOf:
+          - $ref: '#/components/schemas/CountryId'
+          description: 'If specified, it means the alternative is valid only for the specified country.
+
+            If null, then the alternative is valid everywhere.'
+        isProviderAlternative:
+          type: boolean
+          description: 'boolean to indicate whether the alternative is a general advice/behaviour alternative or is related to
+
+            a specific alternative provider.'
+        id:
+          type: string
+          description: UUID4 unique identifier of the alternative
+      required:
+      - recommendedProviders
+      - ratioEstimatedReduction
+      - sources
+      - description
+      - geographicalRestriction
+      - isProviderAlternative
+      - id
+      type: object
+    CarbonFootprintOutput:
+      allOf:
+      - $ref: '#/components/schemas/Pick_Transaction.tagValues_'
+      - properties:
+          cleanedLabel:
+            type: string
+            description: 'Cleaned label for the transaction. If a specific provider / brand has been
+
+              identified in the transaction label, it will be the name of this provider / brand.
+
+              It might be the same as the input label if no cleaning operations were carried out.'
+          alternatives:
+            items:
+              $ref: '#/components/schemas/AlternativeOutput'
+            type: array
+            description: 'Populated list of the low-carbon alternatives that are recommended for this particular transaction.
+
+              Optional feature.'
+          alternativeIds:
+            items:
+              $ref: '#/components/schemas/AlternativeId'
+            type: array
+            description: 'List of the ids of the low-carbon alternatives that are recommended for this particular transaction.
+
+              Optional feature.'
+          purchaseCategoryId:
+            type: string
+            description: 'Id of the category of the transaction (e.g. TELECOM, SUPERMARKET, AUTOBUS).
+
+              The relevant associated information can
+
+              be found in the purchase categories endpoint.'
+          isGreen:
+            type: boolean
+            description: 'Boolean value to indicate whether the transaction is associated with a positive action, i.e., an action
+
+              that has a carbon footprint that is lower than the conventional behavour. This means that the transaction
+
+              has generated a positive amount of avoided CO2eq.'
+          transactionId:
+            type: string
+            description: References the id of the transaction whose carbon footprint it is.
+          carbonFootprintEquivalents:
+            $ref: '#/components/schemas/CarbonFootprintEquivalents'
+          methodology:
+            allOf:
+            - $ref: '#/components/schemas/Translation'
+            description: 'Methodology of the carbon footprint calculation
+
+              Optional feature.'
+          carbonFootprint:
+            allOf:
+            - $ref: '#/components/schemas/Pick_CarbonFootprint.emissionsInKg-or-avoidedEmissionsInKg_'
+            description: 'Represents the carbon footprint of a transaction.
+
+              It can be null in the following cases:
+
+              - The transaction could not be categorized
+
+              - The transaction has a positive amount in euros and represents revenues
+
+              - The transaction type is not compatible with carbon footprint analysis'
+        required:
+        - cleanedLabel
+        - purchaseCategoryId
+        - isGreen
+        - transactionId
+        - carbonFootprintEquivalents
+        - carbonFootprint
+        type: object
+    Pick_Transaction.tagValues_:
+      properties:
+        tagValues:
+          items:
+            $ref: '#/components/schemas/TagValue'
+          type: array
+          description: Set of tag values applied to the transaction. These have an influence on carbon footprint calculation.
+      required:
+      - tagValues
+      type: object
+      description: From T, pick a set of properties whose keys are in the union K
     RecommendedProviderOutput:
       properties:
         logoUrl:
@@ -72,36 +194,6 @@ components:
       - url
       - name
       type: object
-    Pick_CarbonFootprint.emissionsInKg-or-avoidedEmissionsInKg_:
-      properties:
-        emissionsInKg:
-          type: number
-          format: double
-          description: Emissions generated in kg of CO2 equivalent (all greenhouse gas are converted to CO2).
-        avoidedEmissionsInKg:
-          type: number
-          format: double
-          description: 'Emissions avoided in kg of CO2 equivalent (all greenhouse gas are converted to CO2).
-
-            Emissions avoided are calculated in regard to a reference situation that can be found
-
-            in the methodology (e.g. carsharing vs driving solo in your car)'
-      required:
-      - emissionsInKg
-      - avoidedEmissionsInKg
-      type: object
-      description: From T, pick a set of properties whose keys are in the union K
-    CountryId:
-      enum:
-      - GB
-      - FR
-      - ES
-      - IT
-      - SE
-      - DE
-      type: string
-    Translations:
-      $ref: '#/components/schemas/Record_Language.string_'
     Translation:
       properties:
         de:
@@ -122,96 +214,22 @@ components:
       description: 'Very short intuitive description of the suggested low-carbon advice or provider
 
         (tweet format with less than 280 characters) in our multilingual format.'
-    TransactionType:
-      description: 'The input type is type of the bank transaction and can take any of the following values:
-
-        * CREDIT: Default type when it is not possible to determine the type of a revenue entry.
-
-        * DEBIT: Default type when it is not possible to determine the type of a disbursement of money.
-
-        * DINTEREST: Interest on a bank account.
-
-        * DIVIDEND: Payment of a company to its shareholders.
-
-        * BANK_FEE: Fees on a bank account.
-
-        * DEPOSIT: Deposit of money in an agency.
-
-        * ATM: Withdrawing money from an ATM.
-
-        * POINT_OF_SALE: Payment with a credit card.
-
-        * CREDIT_CARD_PAYMENT: Month-end debit on a deferred card.
-
-        * INTERNAL_TRANSFER: Transfer of money between two bank accounts of the same customer.
-
-        * TRANSFER: Transfer of money between two bank accounts of two different customers.
-
-        * CHECK: Transaction made by check.
-
-        * CASH: Transaction carried out using a physical currency (notes and coins).
-
-        * DIRECT_DEPOSIT: Deposit of money made by a payer directly into the payee''s bank account.
-
-        * DIRECT_DEBIT: Transaction in which one person (or company) withdraws funds from another person''s bank account.
-
-        * OTHER: When a transaction does not correspond to any of these types.
-
-
-        Only the types POINT_OF_SALE, TRANSFER, DIRECT_DEBIT, DEBIT leads the transaction to be analyzed for carbon footprint.'
-      enum:
-      - CREDIT
-      - DEBIT
-      - INTEREST
-      - DIVIDEND
-      - BANK_FEE
-      - DEPOSIT
-      - ATM
-      - POINT_OF_SALE
-      - CREDIT_CARD_PAYMENT
-      - INTERNAL_TRANSFER
-      - TRANSFER
-      - CHECK
-      - CASH
-      - DIRECT_DEPOSIT
-      - DIRECT_DEBIT
-      - OTHER
-      type: string
-    CarbonFootprintEquivalents:
+    Record_Language.string_:
       properties:
-        avoidedEmissionsInKgEquivalent:
-          allOf:
-          - $ref: '#/components/schemas/Translation'
-          description: intuitive equivalent for the avoided CO2e emissions
-        emissionsInKgEquivalent:
-          allOf:
-          - $ref: '#/components/schemas/Translation'
-          description: intuitive equivalent for the emitted CO2e emissions
-      required:
-      - avoidedEmissionsInKgEquivalent
-      - emissionsInKgEquivalent
+        en:
+          type: string
+        fr:
+          type: string
+        es:
+          type: string
+        it:
+          type: string
+        sv:
+          type: string
+        de:
+          type: string
       type: object
-      description: Intuitive illustration of the calculated carbon footprint in terms of day to day actions and objects
-    Language:
-      enum:
-      - en
-      - fr
-      - es
-      - it
-      - sv
-      - de
-      type: string
-    Pick_Transaction.tagValues_:
-      properties:
-        tagValues:
-          items:
-            $ref: '#/components/schemas/TagValue'
-          type: array
-          description: Set of tag values applied to the transaction. These have an influence on carbon footprint calculation.
-      required:
-      - tagValues
-      type: object
-      description: From T, pick a set of properties whose keys are in the union K
+      description: Construct a type with a set of properties K of type T
     CalculateCarbonFootprintsArgs:
       properties:
         languages:
@@ -232,33 +250,6 @@ components:
       required:
       - transactions
       type: object
-    Record_Language.string_:
-      properties:
-        en:
-          type: string
-        fr:
-          type: string
-        es:
-          type: string
-        it:
-          type: string
-        sv:
-          type: string
-        de:
-          type: string
-      type: object
-      description: Construct a type with a set of properties K of type T
-    Opaque_AlternativeId.string_:
-      allOf:
-      - type: string
-      - properties:
-          __TYPE__:
-            type: string
-            enum:
-            - AlternativeId
-        required:
-        - __TYPE__
-        type: object
     InputTransaction:
       properties:
         countryCode:
@@ -334,53 +325,77 @@ components:
       description: 'Represents a transaction which can be either a bank transaction
 
         or a cash transaction'
-    AlternativeOutput:
-      properties:
-        recommendedProviders:
-          items:
-            $ref: '#/components/schemas/RecommendedProviderOutput'
-          type: array
-          description: List of alternative providers
-        ratioEstimatedReduction:
-          type:
-          - number
-          - 'null'
-          format: double
-          description: 'Estimated average reduction resulting from the suggested low-carbon alternative. Hence a ratio of 0.66 means a reduction
-
-            of 66%, i.e., that the carbon footprint is divided by 3.'
-        sources:
-          items:
+    Opaque_AlternativeId.string_:
+      allOf:
+      - type: string
+      - properties:
+          __TYPE__:
             type: string
-          type:
-          - array
-          - 'null'
-          description: A list of url. Can be null.
-        description:
-          $ref: '#/components/schemas/AlternativeDescriptionTranslations'
-        geographicalRestriction:
-          allOf:
-          - $ref: '#/components/schemas/CountryId'
-          description: 'If specified, it means the alternative is valid only for the specified country.
+            enum:
+            - AlternativeId
+        required:
+        - __TYPE__
+        type: object
+    Translations:
+      $ref: '#/components/schemas/Record_Language.string_'
+    Pick_CarbonFootprint.emissionsInKg-or-avoidedEmissionsInKg_:
+      properties:
+        emissionsInKg:
+          type: number
+          format: double
+          description: Emissions generated in kg of CO2 equivalent (all greenhouse gas are converted to CO2).
+        avoidedEmissionsInKg:
+          type: number
+          format: double
+          description: 'Emissions avoided in kg of CO2 equivalent (all greenhouse gas are converted to CO2).
 
-            If null, then the alternative is valid everywhere.'
-        isProviderAlternative:
-          type: boolean
-          description: 'boolean to indicate whether the alternative is a general advice/behaviour alternative or is related to
+            Emissions avoided are calculated in regard to a reference situation that can be found
 
-            a specific alternative provider.'
-        id:
-          type: string
-          description: UUID4 unique identifier of the alternative
+            in the methodology (e.g. carsharing vs driving solo in your car)'
       required:
-      - recommendedProviders
-      - ratioEstimatedReduction
-      - sources
-      - description
-      - geographicalRestriction
-      - isProviderAlternative
-      - id
+      - emissionsInKg
+      - avoidedEmissionsInKg
       type: object
+      description: From T, pick a set of properties whose keys are in the union K
+    Language:
+      enum:
+      - en
+      - fr
+      - es
+      - it
+      - sv
+      - de
+      type: string
+    CalculateCarbonFootprintsOutput:
+      items:
+        $ref: '#/components/schemas/CarbonFootprintOutput'
+      type: array
+    CarbonFootprintEquivalents:
+      properties:
+        avoidedEmissionsInKgEquivalent:
+          allOf:
+          - $ref: '#/components/schemas/Translation'
+          description: intuitive equivalent for the avoided CO2e emissions
+        emissionsInKgEquivalent:
+          allOf:
+          - $ref: '#/components/schemas/Translation'
+          description: intuitive equivalent for the emitted CO2e emissions
+      required:
+      - avoidedEmissionsInKgEquivalent
+      - emissionsInKgEquivalent
+      type: object
+      description: Intuitive illustration of the calculated carbon footprint in terms of day to day actions and objects
+    AlternativeId:
+      $ref: '#/components/schemas/Opaque_AlternativeId.string_'
+    CountryId:
+      enum:
+      - GB
+      - FR
+      - ES
+      - IT
+      - SE
+      - DE
+      type: string
     TagValue:
       properties:
         value:
@@ -395,76 +410,61 @@ components:
       - value
       - tagId
       type: object
-    CarbonFootprintOutput:
-      allOf:
-      - $ref: '#/components/schemas/Pick_Transaction.tagValues_'
-      - properties:
-          cleanedLabel:
-            type: string
-            description: 'Cleaned label for the transaction. If a specific provider / brand has been
+    TransactionType:
+      description: 'The input type is type of the bank transaction and can take any of the following values:
 
-              identified in the transaction label, it will be the name of this provider / brand.
+        * CREDIT: Default type when it is not possible to determine the type of a revenue entry.
 
-              It might be the same as the input label if no cleaning operations were carried out.'
-          alternatives:
-            items:
-              $ref: '#/components/schemas/AlternativeOutput'
-            type: array
-            description: 'Populated list of the low-carbon alternatives that are recommended for this particular transaction.
+        * DEBIT: Default type when it is not possible to determine the type of a disbursement of money.
 
-              Optional feature.'
-          alternativeIds:
-            items:
-              $ref: '#/components/schemas/AlternativeId'
-            type: array
-            description: 'List of the ids of the low-carbon alternatives that are recommended for this particular transaction.
+        * DINTEREST: Interest on a bank account.
 
-              Optional feature.'
-          purchaseCategoryId:
-            type: string
-            description: 'Id of the category of the transaction (e.g. TELECOM, SUPERMARKET, AUTOBUS).
+        * DIVIDEND: Payment of a company to its shareholders.
 
-              The relevant associated information can
+        * BANK_FEE: Fees on a bank account.
 
-              be found in the purchase categories endpoint.'
-          isGreen:
-            type: boolean
-            description: 'Boolean value to indicate whether the transaction is associated with a positive action, i.e., an action
+        * DEPOSIT: Deposit of money in an agency.
 
-              that has a carbon footprint that is lower than the conventional behavour. This means that the transaction
+        * ATM: Withdrawing money from an ATM.
 
-              has generated a positive amount of avoided CO2eq.'
-          transactionId:
-            type: string
-            description: References the id of the transaction whose carbon footprint it is.
-          carbonFootprintEquivalents:
-            $ref: '#/components/schemas/CarbonFootprintEquivalents'
-          methodology:
-            allOf:
-            - $ref: '#/components/schemas/Translation'
-            description: 'Methodology of the carbon footprint calculation
+        * POINT_OF_SALE: Payment with a credit card.
 
-              Optional feature.'
-          carbonFootprint:
-            allOf:
-            - $ref: '#/components/schemas/Pick_CarbonFootprint.emissionsInKg-or-avoidedEmissionsInKg_'
-            description: 'Represents the carbon footprint of a transaction.
+        * CREDIT_CARD_PAYMENT: Month-end debit on a deferred card.
 
-              It can be null in the following cases:
+        * INTERNAL_TRANSFER: Transfer of money between two bank accounts of the same customer.
 
-              - The transaction could not be categorized
+        * TRANSFER: Transfer of money between two bank accounts of two different customers.
 
-              - The transaction has a positive amount in euros and represents revenues
+        * CHECK: Transaction made by check.
 
-              - The transaction type is not compatible with carbon footprint analysis'
-        required:
-        - cleanedLabel
-        - purchaseCategoryId
-        - isGreen
-        - transactionId
-        - carbonFootprintEquivalents
-        - carbonFootprint
-        type: object
+        * CASH: Transaction carried out using a physical currency (notes and coins).
+
+        * DIRECT_DEPOSIT: Deposit of money made by a payer directly into the payee''s bank account.
+
+        * DIRECT_DEBIT: Transaction in which one person (or company) withdraws funds from another person''s bank account.
+
+        * OTHER: When a transaction does not correspond to any of these types.
+
+
+        Only the types POINT_OF_SALE, TRANSFER, DIRECT_DEBIT, DEBIT leads the transaction to be analyzed for carbon footprint.'
+      enum:
+      - CREDIT
+      - DEBIT
+      - INTEREST
+      - DIVIDEND
+      - BANK_FEE
+      - DEPOSIT
+      - ATM
+      - POINT_OF_SALE
+      - CREDIT_CARD_PAYMENT
+      - INTERNAL_TRANSFER
+      - TRANSFER
+      - CHECK
+      - CASH
+      - DIRECT_DEPOSIT
+      - DIRECT_DEBIT
+      - OTHER
+      type: string
   securitySchemes:
     api_key:
       type: apiKey

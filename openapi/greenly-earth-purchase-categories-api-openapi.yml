@@ -75,23 +75,9 @@ paths:
           type: string
 components:
   schemas:
-    PurchaseCategoryMethodologyTranslations:
+    PurchaseCategoryNameTranslations:
       $ref: '#/components/schemas/Translations'
-      description: 'Methodology used to calculate the carbon footprint of transactions belonging to this purchase category.
-
-        In case of tags applied to the transaction, a methodology is also available within the tag definition.'
-    EnumValueTranslated:
-      properties:
-        translations:
-          $ref: '#/components/schemas/Translations'
-          description: Translations of the enum value
-        id:
-          type: string
-          description: Id of the enum value
-      required:
-      - translations
-      - id
-      type: object
+      description: Name of the purchase category in multilingual format
     Tag:
       properties:
         translations:
@@ -113,21 +99,6 @@ components:
       - type
       - id
       type: object
-    ParentPurchaseCategoryId:
-      enum:
-      - Transport
-      - Food
-      - Shopping
-      - Services
-      - Housing
-      - Uncategorized
-      type: string
-    TagType:
-      enum:
-      - boolean
-      - number
-      - enum
-      type: string
     Record_Language.string_:
       properties:
         en:
@@ -144,9 +115,40 @@ components:
           type: string
       type: object
       description: Construct a type with a set of properties K of type T
-    PurchaseCategoryNameTranslations:
+    EnumValueTranslated:
+      properties:
+        translations:
+          $ref: '#/components/schemas/Translations'
+          description: Translations of the enum value
+        id:
+          type: string
+          description: Id of the enum value
+      required:
+      - translations
+      - id
+      type: object
+    ParentPurchaseCategoryId:
+      enum:
+      - Transport
+      - Food
+      - Shopping
+      - Services
+      - Housing
+      - Uncategorized
+      type: string
+    TagType:
+      enum:
+      - boolean
+      - number
+      - enum
+      type: string
+    PurchaseCategoryMethodologyTranslations:
       $ref: '#/components/schemas/Translations'
-      description: Name of the purchase category in multilingual format
+      description: 'Methodology used to calculate the carbon footprint of transactions belonging to this purchase category.
+
+        In case of tags applied to the transaction, a methodology is also available within the tag definition.'
+    Translations:
+      $ref: '#/components/schemas/Record_Language.string_'
     PurchaseCategoryOutput:
       properties:
         possibleTags:
@@ -173,8 +175,6 @@ components:
       - methodology
       - id
       type: object
-    Translations:
-      $ref: '#/components/schemas/Record_Language.string_'
   securitySchemes:
     api_key:
       type: apiKey

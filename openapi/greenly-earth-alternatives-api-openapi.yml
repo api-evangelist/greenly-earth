@@ -65,11 +65,6 @@ paths:
           type: string
 components:
   schemas:
-    AlternativeDescriptionTranslations:
-      $ref: '#/components/schemas/Translations'
-      description: 'Very short intuitive description of the suggested low-carbon advice or provider
-
-        (tweet format with less than 280 characters) in our multilingual format.'
     AlternativeOutput:
       properties:
         recommendedProviders:
@@ -117,6 +112,27 @@ components:
       - isProviderAlternative
       - id
       type: object
+    AlternativeDescriptionTranslations:
+      $ref: '#/components/schemas/Translations'
+      description: 'Very short intuitive description of the suggested low-carbon advice or provider
+
+        (tweet format with less than 280 characters) in our multilingual format.'
+    Record_Language.string_:
+      properties:
+        en:
+          type: string
+        fr:
+          type: string
+        es:
+          type: string
+        it:
+          type: string
+        sv:
+          type: string
+        de:
+          type: string
+      type: object
+      description: Construct a type with a set of properties K of type T
     RecommendedProviderOutput:
       properties:
         logoUrl:
@@ -137,22 +153,8 @@ components:
       - url
       - name
       type: object
-    Record_Language.string_:
-      properties:
-        en:
-          type: string
-        fr:
-          type: string
-        es:
-          type: string
-        it:
-          type: string
-        sv:
-          type: string
-        de:
-          type: string
-      type: object
-      description: Construct a type with a set of properties K of type T
+    Translations:
+      $ref: '#/components/schemas/Record_Language.string_'
     CountryId:
       enum:
       - GB
@@ -162,8 +164,6 @@ components:
       - SE
       - DE
       type: string
-    Translations:
-      $ref: '#/components/schemas/Record_Language.string_'
   securitySchemes:
     api_key:
       type: apiKey
