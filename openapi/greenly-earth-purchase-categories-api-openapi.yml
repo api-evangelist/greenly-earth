@@ -75,30 +75,6 @@ paths:
           type: string
 components:
   schemas:
-    PurchaseCategoryNameTranslations:
-      $ref: '#/components/schemas/Translations'
-      description: Name of the purchase category in multilingual format
-    Tag:
-      properties:
-        translations:
-          $ref: '#/components/schemas/Translations'
-          description: Translations of the tag description
-        enumValues:
-          items:
-            $ref: '#/components/schemas/EnumValueTranslated'
-          type: array
-          description: Possible values for the tag in case of enum
-        type:
-          $ref: '#/components/schemas/TagType'
-          description: Type of the tag
-        id:
-          type: string
-          description: Id of the tag
-      required:
-      - translations
-      - type
-      - id
-      type: object
     Record_Language.string_:
       properties:
         en:
@@ -115,40 +91,6 @@ components:
           type: string
       type: object
       description: Construct a type with a set of properties K of type T
-    EnumValueTranslated:
-      properties:
-        translations:
-          $ref: '#/components/schemas/Translations'
-          description: Translations of the enum value
-        id:
-          type: string
-          description: Id of the enum value
-      required:
-      - translations
-      - id
-      type: object
-    ParentPurchaseCategoryId:
-      enum:
-      - Transport
-      - Food
-      - Shopping
-      - Services
-      - Housing
-      - Uncategorized
-      type: string
-    TagType:
-      enum:
-      - boolean
-      - number
-      - enum
-      type: string
-    PurchaseCategoryMethodologyTranslations:
-      $ref: '#/components/schemas/Translations'
-      description: 'Methodology used to calculate the carbon footprint of transactions belonging to this purchase category.
-
-        In case of tags applied to the transaction, a methodology is also available within the tag definition.'
-    Translations:
-      $ref: '#/components/schemas/Record_Language.string_'
     PurchaseCategoryOutput:
       properties:
         possibleTags:
@@ -173,6 +115,64 @@ components:
       - translations
       - parentPurchaseCategory
       - methodology
+      - id
+      type: object
+    PurchaseCategoryNameTranslations:
+      $ref: '#/components/schemas/Translations'
+      description: Name of the purchase category in multilingual format
+    TagType:
+      enum:
+      - boolean
+      - number
+      - enum
+      type: string
+    PurchaseCategoryMethodologyTranslations:
+      $ref: '#/components/schemas/Translations'
+      description: 'Methodology used to calculate the carbon footprint of transactions belonging to this purchase category.
+
+        In case of tags applied to the transaction, a methodology is also available within the tag definition.'
+    Tag:
+      properties:
+        translations:
+          $ref: '#/components/schemas/Translations'
+          description: Translations of the tag description
+        enumValues:
+          items:
+            $ref: '#/components/schemas/EnumValueTranslated'
+          type: array
+          description: Possible values for the tag in case of enum
+        type:
+          $ref: '#/components/schemas/TagType'
+          description: Type of the tag
+        id:
+          type: string
+          description: Id of the tag
+      required:
+      - translations
+      - type
+      - id
+      type: object
+    ParentPurchaseCategoryId:
+      enum:
+      - Transport
+      - Food
+      - Shopping
+      - Services
+      - Housing
+      - Uncategorized
+      type: string
+    Translations:
+      $ref: '#/components/schemas/Record_Language.string_'
+    EnumValueTranslated:
+      properties:
+        translations:
+          $ref: '#/components/schemas/Translations'
+          description: Translations of the enum value
+        id:
+          type: string
+          description: Id of the enum value
+      required:
+      - translations
       - id
       type: object
   securitySchemes:

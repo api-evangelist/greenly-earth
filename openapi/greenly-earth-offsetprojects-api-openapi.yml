@@ -95,19 +95,6 @@ paths:
               $ref: '#/components/schemas/BookOffsetArgs'
 components:
   schemas:
-    BookOffsetOutput:
-      properties:
-        totalPrice:
-          type: number
-          format: double
-          description: Total price corresponding to the booking realized
-        bookingSuccessful:
-          type: boolean
-          description: Boolean representing whether the booking was successfully done.
-      required:
-      - totalPrice
-      - bookingSuccessful
-      type: object
     Record_Language.string_:
       properties:
         en:
@@ -124,24 +111,19 @@ components:
           type: string
       type: object
       description: Construct a type with a set of properties K of type T
-    BookOffsetArgs:
+    BookOffsetOutput:
       properties:
-        email:
-          type: string
-          description: (Optional) Email of the user carrying out the booking
-        bookedOffsetInTCO2eq:
+        totalPrice:
           type: number
           format: double
-          description: Quantity of offsetting being booked (in TCO2eq)
-        offsetProjectId:
-          type: string
-          description: Unique identifier of the chosen project
+          description: Total price corresponding to the booking realized
+        bookingSuccessful:
+          type: boolean
+          description: Boolean representing whether the booking was successfully done.
       required:
-      - bookedOffsetInTCO2eq
-      - offsetProjectId
+      - totalPrice
+      - bookingSuccessful
       type: object
-    Translations:
-      $ref: '#/components/schemas/Record_Language.string_'
     OffsetProjectOutput:
       properties:
         remainingOffsetInTCO2eq:
@@ -201,6 +183,24 @@ components:
       - name
       - id
       type: object
+    BookOffsetArgs:
+      properties:
+        email:
+          type: string
+          description: (Optional) Email of the user carrying out the booking
+        bookedOffsetInTCO2eq:
+          type: number
+          format: double
+          description: Quantity of offsetting being booked (in TCO2eq)
+        offsetProjectId:
+          type: string
+          description: Unique identifier of the chosen project
+      required:
+      - bookedOffsetInTCO2eq
+      - offsetProjectId
+      type: object
+    Translations:
+      $ref: '#/components/schemas/Record_Language.string_'
   securitySchemes:
     api_key:
       type: apiKey
