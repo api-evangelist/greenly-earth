@@ -1,4 +1,4 @@
-# Greenly (greenly-earth)
+# Greenly
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,129 +66,112 @@
 
 Greenly is a Paris-headquartered (with offices in London and New York) carbon accounting platform focused on small and mid-sized businesses, helping companies measure, reduce, and report their greenhouse-gas emissions across Scope 1, 2, and 3. The platform automates carbon footprint calculations from accounting, expense, supplier, energy, and cloud data; produces regulator-aligned Bilan Carbone, GHG Protocol, CSRD, CBAM, EUDR, SBTi, CDP, TCFD/IFRS, EcoVadis, and California climate disclosure deliverables; supports product-level LCA; recommends supplier alternatives; and offers a marketplace for verified carbon-offset projects. Greenly also exposes a developer-facing Carbon Analytics REST API (v1.5, hosted at api.greenly.earth) historically built by Offspend, which banks and fintechs use to enrich bank-card transactions with per-purchase CO2 emissions, classify spend into purchase categories, surface lower-carbon alternatives, and book offset volumes against vetted projects — sandbox and production environments are available with API-key authentication on request to contact@greenly.earth.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/greenly-earth/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/greenly-earth/refs/heads/main/apis.yml)
+**Areas:** Carbon Accounting · Carbon Footprint · Carbon Analytics · Greenhouse Gas · GHG Protocol · Scope 1 · Scope 2 · Scope 3 · Sustainability · ESG · Climate · CSRD
 
-## Scope
+## Greenly on APIs.io
 
-- **Type:** Index
-- **Position:** Provider
-- **Access:** 3rd-Party
+Everything profiled for Greenly is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/greenly-earth/](https://apis.io/providers/greenly-earth/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (7)
 
-- Carbon Accounting
-- Carbon Footprint
-- Carbon Analytics
-- Greenhouse Gas
-- GHG Protocol
-- Scope 1
-- Scope 2
-- Scope 3
-- Sustainability
-- ESG
-- Climate
-- CSRD
-- CBAM
-- EUDR
-- SBTi
-- TCFD
-- EcoVadis
-- Bilan Carbone
-- Life Cycle Assessment
-- Carbon Offsets
-- SMB
-- Fintech
-- Transaction Enrichment
+- [Greenly Alternatives API](https://apis.io/apis/greenly-earth/greenly-earth-alternatives-api/) — The alternatives API from Greenly — 2 operation(s) for alternatives.
+- [Greenly Live API](https://apis.io/apis/greenly-earth/greenly-earth-live-api/) — The live API from Greenly — 1 operation(s) for live.
+- [Greenly Offset Projects API](https://apis.io/apis/greenly-earth/greenly-earth-offsetprojects-api/) — The offsetProjects API from Greenly — 3 operation(s) for offsetprojects.
+- [Greenly Ready API](https://apis.io/apis/greenly-earth/greenly-earth-ready-api/) — The ready API from Greenly — 1 operation(s) for ready.
+- [Greenly Transactions API](https://apis.io/apis/greenly-earth/greenly-earth-transactions-api/) — The transactions API from Greenly — 1 operation(s) for transactions.
+- [Greenly Users API](https://apis.io/apis/greenly-earth/greenly-earth-users-api/) — The users API from Greenly — 2 operation(s) for users.
+- [Greenly Purchase Categories API](https://apis.io/apis/greenly-earth/greenly-earth-purchase-categories-api/) — The Purchase Categories API from Greenly — 2 operation(s) for purchase categories.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-25
-- **Modified:** 2026-05-25
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Greenly Carbon Analytics API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Greenly Carbon Analytics API (v1.5) is a RESTful service that enriches bank-card and expense transactions with carbon-footprint analytics. Given a transaction label (raw or cleaned), country, amount, and currency, the API classifies the spend into a purchase category, detects the merchant/provider, and returns estimated CO2-equivalent emissions plus optional lower-carbon alternatives. Companion endpoints expose the purchase-category taxonomy, the list of recommended lower-carbon provider alternatives, the catalog of verified carbon offset projects, an offset-booking endpoint, basic user management, and standard live/ready health probes. Two environments are published: a sandbox at https://apisandbox.greenly.earth/v1.5 and production at https://api.greenly.earth/v1.5. Access requires an API key obtained by emailing contact@greenly.earth; the key is passed in the api-key request header. JSON in and out; sample Postman requests are available.
+- [Greenly Earth Agentic Access](https://apis.io/agentic-access/greenly-earth/greenly-earth-agentic-access/)
 
-- **Human URL:** [https://api.greenly.earth/v1.5](https://api.greenly.earth/v1.5)
-- **Base URL:** `https://api.greenly.earth/v1.5`
+#### Collections (8)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Carbon Analytics
-- Carbon Footprint
-- Transaction Enrichment
-- Carbon Offsets
-- Purchase Categories
-- Fintech
+- [Greenly Carbon Analytics API](https://apis.io/collections/greenly-earth/open-greenly-carbon-analytics-api/)
+- [Greenly Carbon Analytics alternatives API](https://apis.io/collections/greenly-earth/open-greenly-earth-alternatives-api/)
+- [Greenly Carbon Analytics alternatives live API](https://apis.io/collections/greenly-earth/open-greenly-earth-live-api/)
+- [Greenly Carbon Analytics alternatives offsetProjects API](https://apis.io/collections/greenly-earth/open-greenly-earth-offsetprojects-api/)
+- [Greenly Carbon Analytics alternatives purchaseCategories API](https://apis.io/collections/greenly-earth/open-greenly-earth-purchasecategories-api/)
+- [Greenly Carbon Analytics alternatives ready API](https://apis.io/collections/greenly-earth/open-greenly-earth-ready-api/)
+- [Greenly Carbon Analytics alternatives transactions API](https://apis.io/collections/greenly-earth/open-greenly-earth-transactions-api/)
+- [Greenly Carbon Analytics alternatives users API](https://apis.io/collections/greenly-earth/open-greenly-earth-users-api/)
 
-#### Properties
+#### Security (2)
 
-- [OpenAPI](openapi/greenly-carbon-analytics-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/greenly-carbon-analytics-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/greenly-carbon-analytics-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Sandbox](https://apisandbox.greenly.earth/v1.5)
-- [Production](https://api.greenly.earth/v1.5)
-- [Documentation](https://bump.sh/greenly)
-- [Authentication](https://api.greenly.earth/v1.5)
-- [Support](mailto:contact@greenly.earth)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Greenly Earth Authentication](https://apis.io/security/greenly-earth/greenly-earth-authentication/)
+- [Greenly Earth Domain Security](https://apis.io/security/greenly-earth/greenly-earth-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://greenly.earth/)
-- [Portal](https://greenly.earth/en-us)
-- [Pricing](https://greenly.earth/info/pricing)
-- [Plans](https://greenly.earth/info/pricing)
 - [Documentation](https://help.greenly.earth/en/)
+- [Pricing](https://greenly.earth/info/pricing)
 - [Support](https://help.greenly.earth/en/)
-- [Help Center](https://help.greenly.earth/en/)
-- [Contact Us](mailto:contact@greenly.earth)
-- [Partners](https://greenly.earth/en-us/partners)
-- [Become A Partner](https://greenly.earth/en-us/partners/become-a-partner)
-- [Industries](https://greenly.earth/en-us/industries/finance)
-- [Industries](https://greenly.earth/en-us/industries/tech)
-- [Industries](https://greenly.earth/en-us/industries/retail)
-- [Industries](https://greenly.earth/en-us/industries/industrial)
-- [Product](https://greenly.earth/en-us/products/carbon-footprint)
-- [Product](https://greenly.earth/en-us/products/lca)
-- [Product](https://greenly.earth/en-us/products/action-plans)
-- [Product](https://greenly.earth/en-us/products/csrd-reporting)
-- [Product](https://greenly.earth/en-us/products/cbam)
-- [Product](https://greenly.earth/en-us/products/eudr)
-- [Product](https://greenly.earth/en-us/products/ecovadis)
-- [Product](https://greenly.earth/en-us/products/esg-framework)
-- [Product](https://greenly.earth/en-us/products/sustainable-procurement)
-- [Product](https://greenly.earth/en-us/products/california-climate-disclosure-laws)
-- [Product](https://greenly.earth/en-us/products/tcfd-ifrs-certifications)
-- [Product](https://greenly.earth/en-us/products/retail-espr)
-- [Methodology](https://greenly.earth/en-us/info/emission-factors)
-- [Methodology](https://greenly.earth/en-us/info/artificial-intelligence)
-- [Methodology](https://greenly.earth/en-us/info/scientific-board)
-- [Methodology](https://greenly.earth/en-us/sbti)
-- [Glossary](https://greenly.earth/en-us/glossary)
 - [Blog](https://greenly.earth/en-us/blog)
-- [Case Studies](https://greenly.earth/en-us/case-study)
-- [Resources](https://greenly.earth/en-us/resources/ebooks)
-- [Resources](https://greenly.earth/en-us/resources/webinar)
-- [Events](https://greenly.earth/en-us/resources/events)
-- [Newsletter](https://greenly.earth/en-us/newsletter)
-- [Tools](https://greenly.earth/en-us/tools)
-- [Press Kit](https://greenly.earth/en-us/info/press-kit)
-- [E S G Report](https://greenly.earth/en-us/info/greenly-esg-report)
-- [Comparison](https://greenly.earth/en-us/compare/greenly-vs-watershed)
-- [Comparison](https://greenly.earth/en-us/compare/greenly-vs-persefoni)
-- [Comparison](https://greenly.earth/en-us/compare/greenly-vs-normative)
-- [Comparison](https://greenly.earth/en-us/compare/greenly-vs-sweep)
-- [Comparison](https://greenly.earth/en-us/compare/greenly-vs-sami)
-- [Privacy Policy](https://greenly.earth/en-us/cgv/privacy-policy-greenly-by-offspend)
-- [Data Security](https://greenly.earth/en-us/cgv/data-security)
-- [LinkedIn](https://www.linkedin.com/company/greenly)
-- [Sign Up](https://greenly.earth/en-us/products/demo-steps)
-- [Features](undefined)
+- [Privacy policy](https://greenly.earth/en-us/cgv/privacy-policy-greenly-by-offspend)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
-**URL:** https://apievangelist.com
+**Kin Score 32.3** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 49.6 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 35.7 |
+| Access clarity | 34.2 |
+
+**Agent readiness 17.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 13.1** — Energy & Utilities
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/greenly-earth/](https://apis.io/providers/greenly-earth/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Greenly: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/greenly-earth/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
